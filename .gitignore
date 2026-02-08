@@ -1,0 +1,53 @@
+# Secrets
+.env
+api.json
+.idempotency.json
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pkl
+
+# Logs
+*.log
+*.pid
+
+# Runtime state (regenerated automatically)
+daily_tracker.json
+risk_state.json
+open_positions.json
+overnight_watchlist.json
+status.json
+last_notification.json
+ml/ml_status.json
+smartbot_status.txt
+
+# Data
+performance_history.json
+ml/historical_signals.csv
+nltk_data/
+
+# Generated dashboards
+status_dashboard*.html
+
+# System / editor
+.Xauthority
+.bash_history
+.bash_logout
+.bashrc
+.profile
+.sommelierrc
+.sudo_as_admin_successful
+.viminfo
+.cache/
+.config/
+.local/
+.dotnet/
+.pki/
+.vscode/
+.venv/
+code_*.deb
+
+# Reports (bulk auto-generated)
+reports/

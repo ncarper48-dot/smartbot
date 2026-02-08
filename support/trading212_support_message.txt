@@ -1,0 +1,31 @@
+Subject: API key returns 401 Unauthorized — please verify activation/scope
+
+Hello Trading 212 support team,
+
+My API key is returning a 401 Unauthorized when I call the account endpoint. Please can you check whether the key is active and allowed for API calls?
+
+Details:
+- Account / email: <your account email or ID>
+- Key ID: 44068546ZoNeiGnSAeOdKazdiHxDLnbgIkVZz
+- Environment tested: demo (also tested live)
+- Test executed (no secret included):
+  curl -i -H "Authorization: Basic <base64(key:secret)>" -H "Content-Type: application/json" "https://demo.trading212.com/api/v0/equity/account/cash"
+- Response observed:
+  - HTTP/1.1 401 Unauthorized
+  - Date: Sun, 28 Dec 2025 21:20:45 GMT
+
+Actions I’ve taken:
+- Confirmed key/secret were copied correctly and tested both demo and live endpoints
+- Rotated previously exposed credentials and removed local copies
+
+Questions:
+1. Is the key active for the demo and/or live endpoint?
+2. Are there any scopes, IP allowlists, or activation steps required before the key can be used?
+3. Can you confirm whether the key is currently revoked or disabled?
+
+If helpful, I can provide request timestamps or additional headers for debugging.
+
+Thanks in advance for your help — please let me know any logs or details you need from my side.
+
+Best regards,
+<Your name>

@@ -1,0 +1,38 @@
+name: Daily Demo Run
+
+on:
+  schedule:
+    - cron: '0 8 * * *'  # run daily at 08:00 UTC
+  workflow_dispatch: {}
+
+jobs:
+  daily_demo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run daily demo runner
+        env:
+          TRADING212_API_KEY: ${{ secrets.TRADING212_API_KEY }}
+          TRADING212_API_SECRET: ${{ secrets.TRADING212_API_SECRET }}
+          TRADING212_BASE_URL: https://demo.trading212.com/api/v0
+          TRADING212_USE_MOCK: ""
+        run: |
+          python daily_runner.py
+
+      - name: Upload reports as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: daily-demo-reports
+          path: reports/**
