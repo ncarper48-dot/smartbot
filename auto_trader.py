@@ -106,7 +106,7 @@ def run_strategy():
             [sys.executable, '/home/tradebot/live_trader.py'],
             capture_output=True,
             text=True,
-            timeout=300,
+            timeout=600,
             env=env
         )
         

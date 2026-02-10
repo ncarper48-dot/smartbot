@@ -53,10 +53,17 @@ class AdvancedRiskManager:
             json.dump(state, f, indent=2)
     
     def load_positions(self):
-        """Load open positions"""
-        if os.path.exists(self.positions_file):
-            with open(self.positions_file, 'r') as f:
-                return json.load(f)
+        """Load open positions (handles empty/corrupt files gracefully)"""
+        try:
+            if os.path.exists(self.positions_file):
+                with open(self.positions_file, 'r') as f:
+                    content = f.read().strip()
+                    if not content:
+                        return {}
+                    return json.loads(content)
+        except (json.JSONDecodeError, Exception) as e:
+            print(f"⚠️ Positions file corrupt, resetting: {e}")
+            self.save_positions({})
         return {}
     
     def save_positions(self, positions):

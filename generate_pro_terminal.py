@@ -113,6 +113,27 @@ def generate_html():
     losers.sort(key=lambda x: x['pnl'])
     all_positions = winners + losers
     
+    # Load overnight intelligence
+    overnight = {}
+    try:
+        with open('/home/tradebot/overnight_watchlist.json') as f:
+            overnight = json.load(f)
+    except Exception:
+        pass
+    overnight_ts = overnight.get('timestamp', '')
+    overnight_age = ''
+    if overnight_ts:
+        try:
+            age_sec = (datetime.now() - datetime.fromisoformat(overnight_ts)).total_seconds()
+            if age_sec < 3600:
+                overnight_age = f'{int(age_sec/60)}m ago'
+            elif age_sec < 86400:
+                overnight_age = f'{int(age_sec/3600)}h ago'
+            else:
+                overnight_age = 'stale'
+        except Exception:
+            overnight_age = ''
+
     # Calculate metrics
     target_daily = 500
     progress_pct = (pnl_today / target_daily * 100) if target_daily > 0 else 0
@@ -366,6 +387,77 @@ body {{
     font-weight: 500;
 }}
 
+/* Overnight Intelligence */
+.overnight-grid {{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 16px;
+}}
+
+.overnight-card {{
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    padding: 16px;
+}}
+
+.overnight-card .section-title {{
+    font-size: 0.8rem;
+    color: #8b949e;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+}}
+
+.edge-bar {{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.8rem;
+}}
+
+.edge-fill {{
+    height: 6px;
+    border-radius: 3px;
+    flex: 1;
+    background: #21262d;
+    overflow: hidden;
+}}
+
+.edge-fill-inner {{
+    height: 100%;
+    border-radius: 3px;
+}}
+
+.edge-label {{
+    min-width: 50px;
+    text-align: right;
+    color: #8b949e;
+}}
+
+.edge-score {{
+    min-width: 40px;
+    font-weight: 600;
+}}
+
+.global-row {{
+    display: flex;
+    justify-content: space-between;
+    padding: 3px 0;
+    font-size: 0.8rem;
+    font-family: 'IBM Plex Mono', monospace;
+    border-bottom: 1px solid #21262d;
+}}
+
+.global-row:last-child {{ border-bottom: none; }}
+
+@media (max-width: 1400px) {{
+    .overnight-grid {{ grid-template-columns: 1fr; }}
+}}
+
 /* Footer */
 .footer {{
     margin-top: 16px;
@@ -535,9 +627,78 @@ body {{
     </table>
 </div>
 
+<!-- Overnight Intelligence -->
+<div class="data-section" style="margin-top: 16px;">
+    <div class="section-header">
+        <div class="section-title">🌙 Overnight Intelligence</div>
+        <div class="section-badge">{overnight_age if overnight_age else "no data"}</div>
+    </div>
+</div>
+'''
+
+    # Global Markets
+    global_mkts = overnight.get('global_markets', {})
+    sector_rot = overnight.get('sector_rotation', {})
+    watchlist = overnight.get('watchlist', [])
+
+    html += '<div class="overnight-grid">\n'
+
+    # Panel 1: Global Markets
+    html += '<div class="overnight-card">\n'
+    html += '  <div class="section-title">🌍 Global Markets</div>\n'
+    key_indices = ['ES=F', 'NQ=F', '^FTSE', '^GDAXI', '^N225', '^HSI', '^VIX', 'GC=F', 'CL=F']
+    for sym in key_indices:
+        gd = global_mkts.get(sym, {})
+        if not gd:
+            continue
+        chg = gd.get('chg_1d', 0)
+        color = '#3fb950' if chg >= 0 else '#f85149'
+        name = gd.get('name', sym)[:20]
+        html += f'  <div class="global-row"><span>{name}</span><span style="color:{color};font-weight:500">{chg:+.2f}%</span></div>\n'
+    html += '</div>\n'
+
+    # Panel 2: Sector Rotation
+    html += '<div class="overnight-card">\n'
+    html += '  <div class="section-title">📊 Sector Rotation</div>\n'
+    sectors_sorted = sorted(sector_rot.items(), key=lambda x: x[1].get('chg_1d', 0), reverse=True)
+    for etf, sd in sectors_sorted:
+        chg = sd.get('chg_1d', 0)
+        color = '#3fb950' if chg >= 0 else '#f85149'
+        name = sd.get('name', etf)[:20]
+        html += f'  <div class="global-row"><span>{name}</span><span style="color:{color};font-weight:500">{chg:+.2f}%</span></div>\n'
+    html += '</div>\n'
+
+    # Panel 3: Top Watchlist Picks
+    html += '<div class="overnight-card">\n'
+    html += '  <div class="section-title">🏆 Edge Watchlist</div>\n'
+    for w in watchlist[:8]:
+        edge = w.get('edge_score', 0)
+        sym = w.get('symbol', '?')
+        rec = w.get('recommendation', '')
+        if edge >= 25:
+            color = '#3fb950'
+        elif edge >= 10:
+            color = '#e3b341'
+        elif edge >= 0:
+            color = '#8b949e'
+        else:
+            color = '#f85149'
+        bar_w = max(0, min(100, edge))
+        badge = '🟢' if rec == 'PRIORITY BUY' else ('🟡' if rec == 'WATCH' else '⚪')
+        html += f'  <div class="edge-bar">'
+        html += f'<span style="min-width:20px">{badge}</span>'
+        html += f'<span class="edge-label">{sym}</span>'
+        html += f'<div class="edge-fill"><div class="edge-fill-inner" style="width:{bar_w}%;background:{color}"></div></div>'
+        html += f'<span class="edge-score" style="color:{color}">{edge:+.0f}</span>'
+        html += f'</div>\n'
+    html += '</div>\n'
+
+    html += '</div>\n'
+
+    html += f'''
 <!-- Footer -->
 <div class="footer">
-    SmartBot 24/7 Trading System | Stocks Only | Total Balance: ${combined_total:,.2f}
+    SmartBot V3 Trading System | Overnight Intelligence Active | Total Balance: ${combined_total:,.2f}
 </div>
 
 </div>
