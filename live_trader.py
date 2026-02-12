@@ -411,7 +411,7 @@ def execute_live_trading(tickers_212: list, dry_run: bool = False) -> dict:
 
         elif action == "SELL_PARTIAL":
             portion = exit_sig.get("portion", 0.5)
-            qty_sell = max(0.001, round(qty * portion, 3))
+            qty_sell = max(0.1, round(qty * portion, 1))
             print(f"💰 PARTIAL: {ticker} {qty_sell}/{qty} @ ${price:.2f} — {reason}")
             if not dry_run and qty_sell > 0:
                 try:
@@ -702,11 +702,11 @@ def execute_live_trading(tickers_212: list, dry_run: bool = False) -> dict:
             # Quantity
             if free_cash < 10:
                 qty = min(max_amt / price, free_cash * 0.95 / price) if price > 0 else 0
-                qty = round(qty, 3)
-                if qty < 0.001 or qty * price < 0.10:
+                qty = round(qty, 1)
+                if qty < 0.1 or qty * price < 0.10:
                     print(f"   💸 SKIP — too small (${free_cash:.2f})")
                     continue
-                print(f"   🔸 FRACTIONAL: {qty:.3f} shares")
+                print(f"   🔸 FRACTIONAL: {qty:.1f} shares")
             else:
                 qty = max(1, round(max_amt / price)) if price > 0 else 0
                 qty = min(qty, 100)
