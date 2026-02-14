@@ -1,351 +1,4581 @@
 {
   "version": 2,
   "created": "2026-02-14T10:48:10.345125",
-  "last_updated": "2026-02-14T10:48:10.373061",
-  "total_trades_learned": 8,
+  "last_updated": "2026-02-14T10:55:38.357907",
+  "total_trades_learned": 816,
   "ticker_memory": {
     "NOK": {
-      "wins": 0,
-      "losses": 2,
-      "total_pnl": -0.059999942779541016,
-      "avg_pnl": -0.029999971389770508,
-      "best_trade": 0,
-      "worst_trade": -0.059999942779541016,
-      "total_trades": 2,
-      "win_streak": 0,
-      "lose_streak": 2,
-      "last_trade": "2026-02-13T20:45:20.715394",
-      "avg_hold_hours": 101.55652488722222
+      "wins": 12,
+      "losses": 6,
+      "total_pnl": 1.2863240043115338,
+      "avg_pnl": 0.0714624446839741,
+      "best_trade": 0.6122448979591837,
+      "worst_trade": -0.2223926094335796,
+      "total_trades": 18,
+      "win_streak": 5,
+      "lose_streak": 0,
+      "last_trade": "2026-02-11 20:30:00+00:00",
+      "avg_hold_hours": 40.57572498746914
     },
     "SNAP": {
-      "wins": 1,
-      "losses": 2,
-      "total_pnl": -0.11309957504272461,
-      "avg_pnl": -0.03769985834757487,
-      "best_trade": 0.0019001960754394531,
-      "worst_trade": -0.07499980926513672,
-      "total_trades": 3,
-      "win_streak": 0,
-      "lose_streak": 1,
-      "last_trade": "2026-02-10T02:05:58.146488",
-      "avg_hold_hours": 27.554654839907403
-    },
-    "AAL": {
-      "wins": 0,
-      "losses": 1,
-      "total_pnl": -0.06989963531494148,
-      "avg_pnl": -0.06989963531494148,
-      "best_trade": 0,
-      "worst_trade": -0.06989963531494148,
-      "total_trades": 1,
-      "win_streak": 0,
-      "lose_streak": 1,
-      "last_trade": "2026-02-13T20:45:21.037122",
-      "avg_hold_hours": 2.1710060572222223
-    },
-    "RIVN": {
-      "wins": 1,
-      "losses": 0,
-      "total_pnl": 4.361500148773195,
-      "avg_pnl": 4.361500148773195,
-      "best_trade": 4.361500148773195,
-      "worst_trade": 0,
-      "total_trades": 1,
+      "wins": 15,
+      "losses": 30,
+      "total_pnl": -3.364531489456998,
+      "avg_pnl": -0.07476736643237773,
+      "best_trade": 0.5201109542523359,
+      "worst_trade": -0.6516296317837255,
+      "total_trades": 45,
       "win_streak": 1,
       "lose_streak": 0,
-      "last_trade": "2026-02-13T20:45:21.362042",
-      "avg_hold_hours": 49.519187244722225
+      "last_trade": "2026-02-13 17:00:00+00:00",
+      "avg_hold_hours": 28.43697698932716
+    },
+    "AAL": {
+      "wins": 15,
+      "losses": 11,
+      "total_pnl": 1.6290430554801827,
+      "avg_pnl": 0.06265550213385318,
+      "best_trade": 0.5527804893292325,
+      "worst_trade": -0.4428174491805983,
+      "total_trades": 26,
+      "win_streak": 1,
+      "lose_streak": 0,
+      "last_trade": "2026-02-13 17:30:00+00:00",
+      "avg_hold_hours": 23.160423309893165
+    },
+    "RIVN": {
+      "wins": 18,
+      "losses": 21,
+      "total_pnl": 4.624558401929732,
+      "avg_pnl": 0.11857842056230081,
+      "best_trade": 4.361500148773195,
+      "worst_trade": -0.6443006861797663,
+      "total_trades": 39,
+      "win_streak": 1,
+      "lose_streak": 0,
+      "last_trade": "2026-02-13 14:30:00+00:00",
+      "avg_hold_hours": 28.795363775505685
     },
     "AMC": {
-      "wins": 0,
-      "losses": 1,
-      "total_pnl": -0.2999997138977051,
-      "avg_pnl": -0.2999997138977051,
-      "best_trade": 0,
-      "worst_trade": -0.2999997138977051,
-      "total_trades": 1,
+      "wins": 12,
+      "losses": 42,
+      "total_pnl": -6.763714342713583,
+      "avg_pnl": -0.1252539693095108,
+      "best_trade": 0.5844158156361721,
+      "worst_trade": -0.8048059476298491,
+      "total_trades": 54,
+      "win_streak": 0,
+      "lose_streak": 4,
+      "last_trade": "2026-02-13 20:30:00+00:00",
+      "avg_hold_hours": 23.299345092536008
+    },
+    "TSLA": {
+      "wins": 21,
+      "losses": 16,
+      "total_pnl": 0.7669796131930001,
+      "avg_pnl": 0.02072917873494595,
+      "best_trade": 0.53678823095629,
+      "worst_trade": -0.4413292748428998,
+      "total_trades": 37,
+      "win_streak": 1,
+      "lose_streak": 0,
+      "last_trade": "2026-02-13 19:00:00+00:00",
+      "avg_hold_hours": 28.62837837837838
+    },
+    "NVDA": {
+      "wins": 11,
+      "losses": 10,
+      "total_pnl": 0.006766204112587257,
+      "avg_pnl": 0.0003222001958374884,
+      "best_trade": 0.5398213539586859,
+      "worst_trade": -0.5417468335954838,
+      "total_trades": 21,
+      "win_streak": 3,
+      "lose_streak": 0,
+      "last_trade": "2026-02-11 20:15:00+00:00",
+      "avg_hold_hours": 28.94047619047619
+    },
+    "AMD": {
+      "wins": 18,
+      "losses": 17,
+      "total_pnl": 0.6520655246605519,
+      "avg_pnl": 0.018630443561730055,
+      "best_trade": 0.6575026251760036,
+      "worst_trade": -0.7855129847179276,
+      "total_trades": 35,
+      "win_streak": 1,
+      "lose_streak": 0,
+      "last_trade": "2026-02-13 19:00:00+00:00",
+      "avg_hold_hours": 20.021428571428572
+    },
+    "COIN": {
+      "wins": 15,
+      "losses": 28,
+      "total_pnl": -3.269476927299112,
+      "avg_pnl": -0.07603434714649099,
+      "best_trade": 0.6768695129354252,
+      "worst_trade": -0.6040253096315953,
+      "total_trades": 43,
+      "win_streak": 2,
+      "lose_streak": 0,
+      "last_trade": "2026-02-13 15:15:00+00:00",
+      "avg_hold_hours": 31.412790697674414
+    },
+    "SOFI": {
+      "wins": 24,
+      "losses": 25,
+      "total_pnl": -1.3970179201191728,
+      "avg_pnl": -0.028510569798350465,
+      "best_trade": 0.7411367301022631,
+      "worst_trade": -0.7217715464464218,
+      "total_trades": 49,
+      "win_streak": 1,
+      "lose_streak": 0,
+      "last_trade": "2026-02-13 18:00:00+00:00",
+      "avg_hold_hours": 27.071428571428573
+    },
+    "PLTR": {
+      "wins": 15,
+      "losses": 18,
+      "total_pnl": -2.0069794722040415,
+      "avg_pnl": -0.060817559763758834,
+      "best_trade": 0.5314598172653536,
+      "worst_trade": -0.5827577901306068,
+      "total_trades": 33,
+      "win_streak": 1,
+      "lose_streak": 0,
+      "last_trade": "2026-02-13 17:30:00+00:00",
+      "avg_hold_hours": 32.81818181818183
+    },
+    "GME": {
+      "wins": 14,
+      "losses": 21,
+      "total_pnl": 1.0786549282295528,
+      "avg_pnl": 0.03081871223513008,
+      "best_trade": 0.5212582544484565,
+      "worst_trade": -0.2688400534800511,
+      "total_trades": 35,
       "win_streak": 0,
       "lose_streak": 1,
-      "last_trade": "2026-02-13T20:56:53.409572",
-      "avg_hold_hours": 49.66463499694444
+      "last_trade": "2026-02-12 19:15:00+00:00",
+      "avg_hold_hours": 33.78571428571429
+    },
+    "CCL": {
+      "wins": 10,
+      "losses": 17,
+      "total_pnl": 0.173084624910035,
+      "avg_pnl": 0.00641054166333463,
+      "best_trade": 0.6387864590695826,
+      "worst_trade": -0.28063325093985697,
+      "total_trades": 27,
+      "win_streak": 0,
+      "lose_streak": 2,
+      "last_trade": "2026-02-11 19:00:00+00:00",
+      "avg_hold_hours": 24.15740740740741
+    },
+    "NIO": {
+      "wins": 24,
+      "losses": 29,
+      "total_pnl": 0.22082196047886127,
+      "avg_pnl": 0.004166452084506817,
+      "best_trade": 1.0188957099437048,
+      "worst_trade": -0.5288932025812536,
+      "total_trades": 53,
+      "win_streak": 0,
+      "lose_streak": 1,
+      "last_trade": "2026-02-13 18:30:00+00:00",
+      "avg_hold_hours": 29.21698113207547
+    },
+    "LCID": {
+      "wins": 22,
+      "losses": 28,
+      "total_pnl": -0.8552938685758404,
+      "avg_pnl": -0.01710587737151681,
+      "best_trade": 0.8274656792550088,
+      "worst_trade": -0.6380158906873088,
+      "total_trades": 50,
+      "win_streak": 1,
+      "lose_streak": 0,
+      "last_trade": "2026-02-13 16:30:00+00:00",
+      "avg_hold_hours": 25.035
+    },
+    "HOOD": {
+      "wins": 23,
+      "losses": 25,
+      "total_pnl": -2.8805850405456512,
+      "avg_pnl": -0.06001218834470107,
+      "best_trade": 0.5940809883859983,
+      "worst_trade": -1.0493866040357827,
+      "total_trades": 48,
+      "win_streak": 0,
+      "lose_streak": 1,
+      "last_trade": "2026-02-13 20:15:00+00:00",
+      "avg_hold_hours": 27.567708333333332
+    },
+    "AAPL": {
+      "wins": 16,
+      "losses": 19,
+      "total_pnl": -0.04235669188284441,
+      "avg_pnl": -0.0012101911966526974,
+      "best_trade": 0.2611111647398938,
+      "worst_trade": -0.2941517384395794,
+      "total_trades": 35,
+      "win_streak": 0,
+      "lose_streak": 1,
+      "last_trade": "2026-02-13 19:15:00+00:00",
+      "avg_hold_hours": 28.0
+    },
+    "MSFT": {
+      "wins": 17,
+      "losses": 19,
+      "total_pnl": -0.5112565174364955,
+      "avg_pnl": -0.014201569928791541,
+      "best_trade": 0.3266481414702348,
+      "worst_trade": -0.41595232725645914,
+      "total_trades": 36,
+      "win_streak": 0,
+      "lose_streak": 2,
+      "last_trade": "2026-02-13 15:30:00+00:00",
+      "avg_hold_hours": 31.354166666666668
+    },
+    "GOOGL": {
+      "wins": 7,
+      "losses": 7,
+      "total_pnl": -0.16196828450240583,
+      "avg_pnl": -0.011569163178743274,
+      "best_trade": 0.17755756508147327,
+      "worst_trade": -0.24136050877602716,
+      "total_trades": 14,
+      "win_streak": 0,
+      "lose_streak": 1,
+      "last_trade": "2026-02-13 17:15:00+00:00",
+      "avg_hold_hours": 36.892857142857146
+    },
+    "META": {
+      "wins": 10,
+      "losses": 8,
+      "total_pnl": 0.009119747826465567,
+      "avg_pnl": 0.0005066526570258648,
+      "best_trade": 0.5376064753686591,
+      "worst_trade": -0.28167022339575293,
+      "total_trades": 18,
+      "win_streak": 0,
+      "lose_streak": 2,
+      "last_trade": "2026-02-13 19:15:00+00:00",
+      "avg_hold_hours": 27.930555555555557
+    },
+    "F": {
+      "wins": 8,
+      "losses": 8,
+      "total_pnl": 0.7085189219948078,
+      "avg_pnl": 0.04428243262467549,
+      "best_trade": 0.32489655417164814,
+      "worst_trade": -0.12147200977783648,
+      "total_trades": 16,
+      "win_streak": 1,
+      "lose_streak": 0,
+      "last_trade": "2026-02-10 16:00:00+00:00",
+      "avg_hold_hours": 24.8125
+    },
+    "PLUG": {
+      "wins": 23,
+      "losses": 16,
+      "total_pnl": 0.6438733780424437,
+      "avg_pnl": 0.016509573795960096,
+      "best_trade": 0.8528875652019919,
+      "worst_trade": -0.6239009105676517,
+      "total_trades": 39,
+      "win_streak": 1,
+      "lose_streak": 0,
+      "last_trade": "2026-02-13 16:00:00+00:00",
+      "avg_hold_hours": 23.185897435897434
+    },
+    "PTON": {
+      "wins": 21,
+      "losses": 24,
+      "total_pnl": -3.051672605488185,
+      "avg_pnl": -0.06781494678862633,
+      "best_trade": 0.6065444892883649,
+      "worst_trade": -2.2290203938758433,
+      "total_trades": 45,
+      "win_streak": 1,
+      "lose_streak": 0,
+      "last_trade": "2026-02-13 19:15:00+00:00",
+      "avg_hold_hours": 29.816666666666677
     }
   },
   "factor_memory": {
     "SMA+": {
-      "wins": 1,
-      "losses": 3,
-      "total_pnl": -0.1829992103576661,
-      "avg_pnl": -0.04574980258941652
+      "wins": 162,
+      "losses": 167,
+      "total_pnl": -5.49786160000099,
+      "avg_pnl": -0.0167108255319179
     },
     "RSI:buy_zone": {
-      "wins": 2,
-      "losses": 4,
-      "total_pnl": 3.878501224517824,
-      "avg_pnl": 0.6464168707529706
+      "wins": 280,
+      "losses": 339,
+      "total_pnl": -5.497265701522953,
+      "avg_pnl": -0.008880881585659053
     },
     "MACD+": {
-      "wins": 2,
-      "losses": 4,
-      "total_pnl": 3.878501224517824,
-      "avg_pnl": 0.6464168707529706
+      "wins": 270,
+      "losses": 339,
+      "total_pnl": -9.073920817376655,
+      "avg_pnl": -0.01489970577565953
     },
     "BB:mid": {
-      "wins": 2,
-      "losses": 4,
-      "total_pnl": 3.878501224517824,
-      "avg_pnl": 0.6464168707529706
+      "wins": 254,
+      "losses": 289,
+      "total_pnl": -4.140085633574491,
+      "avg_pnl": -0.007624467096822267
     },
     "Vol+": {
-      "wins": 1,
-      "losses": 2,
-      "total_pnl": -0.11309957504272461,
-      "avg_pnl": -0.03769985834757487
+      "wins": 201,
+      "losses": 228,
+      "total_pnl": -5.26092100408327,
+      "avg_pnl": -0.012263219123737228
     },
     "VWAP:buy": {
-      "wins": 2,
-      "losses": 4,
-      "total_pnl": 3.878501224517824,
-      "avg_pnl": 0.6464168707529706
+      "wins": 285,
+      "losses": 345,
+      "total_pnl": -9.17048424599,
+      "avg_pnl": -0.014556324199984127
     },
     "MACD++": {
-      "wins": 1,
-      "losses": 2,
-      "total_pnl": 3.9916007995605485,
-      "avg_pnl": 1.3305335998535162
+      "wins": 226,
+      "losses": 281,
+      "total_pnl": -3.318450250042992,
+      "avg_pnl": -0.006545266765370793
     },
     "momentum:up": {
-      "wins": 0,
-      "losses": 2,
-      "total_pnl": -0.36989934921264656,
-      "avg_pnl": -0.18494967460632328
+      "wins": 93,
+      "losses": 119,
+      "total_pnl": -7.623783213665986,
+      "avg_pnl": -0.03596124157389616
     },
     "momentum:strong_up": {
-      "wins": 1,
-      "losses": 0,
-      "total_pnl": 4.361500148773195,
-      "avg_pnl": 4.361500148773195
+      "wins": 127,
+      "losses": 157,
+      "total_pnl": -5.681411487987424,
+      "avg_pnl": -0.020004970028124732
+    },
+    "VWAP:at": {
+      "wins": 10,
+      "losses": 5,
+      "total_pnl": 1.262518589831677,
+      "avg_pnl": 0.08416790598877848
+    },
+    "RSI:neutral": {
+      "wins": 73,
+      "losses": 89,
+      "total_pnl": -8.01820907735907,
+      "avg_pnl": -0.04949511776147575
+    },
+    "BB:low": {
+      "wins": 61,
+      "losses": 78,
+      "total_pnl": -5.075548461469895,
+      "avg_pnl": -0.03651473713287694
+    },
+    "BB:hi!": {
+      "wins": 25,
+      "losses": 38,
+      "total_pnl": -2.942856412310137,
+      "avg_pnl": -0.04671200654460535
+    },
+    "GoldenX": {
+      "wins": 15,
+      "losses": 25,
+      "total_pnl": -2.2102136671552763,
+      "avg_pnl": -0.05525534167888191
+    },
+    "RSI:oversold": {
+      "wins": 8,
+      "losses": 8,
+      "total_pnl": -0.8498330012941487,
+      "avg_pnl": -0.053114562580884296
+    },
+    "RSI:overbought": {
+      "wins": 4,
+      "losses": 2,
+      "total_pnl": 0.9977771649880589,
+      "avg_pnl": 0.16629619416467648
     }
   },
   "condition_memory": {
     "regime_wins": {
       "trend": 0,
-      "range": 0,
-      "volatile": 0,
-      "normal": 2
+      "range": 364,
+      "volatile": 1,
+      "normal": 6
     },
     "regime_losses": {
       "trend": 2,
-      "range": 0,
-      "volatile": 0,
-      "normal": 4
+      "range": 431,
+      "volatile": 2,
+      "normal": 10
     },
     "hour_wins": {
-      "19": 1,
-      "20": 1
+      "19": 101,
+      "20": 40,
+      "14": 35,
+      "16": 43,
+      "18": 52,
+      "17": 45,
+      "15": 55
     },
     "hour_losses": {
-      "16": 1,
-      "14": 1,
+      "16": 63,
+      "14": 55,
       "2": 1,
-      "20": 3
+      "20": 40,
+      "19": 115,
+      "18": 55,
+      "17": 48,
+      "15": 68
     },
     "day_wins": {
-      "Monday": 1,
-      "Friday": 1
+      "Monday": 86,
+      "Friday": 98,
+      "Thursday": 65,
+      "Tuesday": 57,
+      "Wednesday": 65
     },
     "day_losses": {
       "Sunday": 1,
-      "Monday": 1,
-      "Tuesday": 1,
-      "Friday": 3
+      "Monday": 71,
+      "Tuesday": 104,
+      "Friday": 89,
+      "Thursday": 90,
+      "Wednesday": 90
     }
   },
   "score_memory": {
     "winning_scores": [
-      63,
-      60
+      51,
+      52,
+      50,
+      60,
+      52,
+      50,
+      50,
+      50,
+      50,
+      58,
+      50,
+      50,
+      65,
+      50,
+      50,
+      56,
+      56,
+      56,
+      53,
+      52,
+      50,
+      53,
+      50,
+      66,
+      70,
+      52,
+      52,
+      55,
+      50,
+      56,
+      60,
+      55,
+      50,
+      51,
+      52,
+      53,
+      50,
+      56,
+      56,
+      65,
+      52,
+      51,
+      60,
+      56,
+      55,
+      50,
+      52,
+      50,
+      50,
+      50,
+      50,
+      50,
+      53,
+      51,
+      50,
+      50,
+      50,
+      53,
+      58,
+      52,
+      58,
+      55,
+      55,
+      50,
+      50,
+      50,
+      50,
+      66,
+      50,
+      50,
+      53,
+      60,
+      50,
+      56,
+      53,
+      60,
+      55,
+      62,
+      56,
+      56,
+      53,
+      66,
+      60,
+      50,
+      56,
+      50,
+      70,
+      55,
+      52,
+      56,
+      50,
+      50,
+      55,
+      52,
+      60,
+      51,
+      70,
+      53,
+      60,
+      55
     ],
     "losing_scores": [
       50,
-      63,
-      63,
+      51,
       50,
+      50,
+      50,
+      50,
+      50,
+      52,
+      50,
+      50,
+      50,
+      56,
+      51,
+      50,
+      51,
+      50,
+      52,
       66,
-      60
+      56,
+      56,
+      51,
+      52,
+      55,
+      50,
+      51,
+      52,
+      50,
+      50,
+      50,
+      52,
+      56,
+      53,
+      56,
+      51,
+      50,
+      56,
+      50,
+      50,
+      56,
+      56,
+      50,
+      50,
+      50,
+      53,
+      52,
+      53,
+      50,
+      56,
+      52,
+      56,
+      53,
+      50,
+      55,
+      50,
+      50,
+      50,
+      51,
+      50,
+      50,
+      56,
+      58,
+      51,
+      52,
+      50,
+      54,
+      52,
+      60,
+      55,
+      50,
+      50,
+      50,
+      60,
+      60,
+      52,
+      52,
+      52,
+      60,
+      57,
+      57,
+      55,
+      55,
+      60,
+      52,
+      51,
+      52,
+      60,
+      50,
+      55,
+      55,
+      50,
+      51,
+      55,
+      55,
+      50,
+      51,
+      54,
+      60,
+      50,
+      55,
+      55
     ]
   },
   "adaptive_params": {
-    "optimal_score_min": 50,
+    "optimal_score_min": 54,
     "optimal_rsi_buy_low": 30,
     "optimal_rsi_buy_high": 60,
-    "confidence_boost_tickers": {},
+    "confidence_boost_tickers": {
+      "NOK": 1.083
+    },
     "confidence_penalty_tickers": {
-      "NOK": 0.955,
-      "SNAP": 0.985
+      "SNAP": 0.917,
+      "AMC": 0.861,
+      "COIN": 0.924
     },
     "best_factors": [
-      "RSI:buy_zone",
-      "MACD+",
-      "BB:mid",
-      "Vol+",
-      "VWAP:buy"
+      "VWAP:at",
+      "RSI:overbought",
+      "RSI:oversold",
+      "SMA+",
+      "Vol+"
     ],
     "worst_factors": [
-      "Vol+",
-      "VWAP:buy",
-      "MACD++",
-      "SMA+",
-      "momentum:up"
+      "MACD+",
+      "BB:low",
+      "momentum:up",
+      "BB:hi!",
+      "GoldenX"
     ],
-    "preferred_regime": "normal",
-    "learning_rate": 0.09
+    "preferred_regime": "range",
+    "learning_rate": 0.5
   },
   "trade_log": [
     {
-      "timestamp": "2026-02-08T16:19:48.671881",
-      "ticker": "NOK",
+      "timestamp": "2025-12-11 19:30:00+00:00",
+      "ticker": "AAPL",
+      "pnl": 0.0942,
+      "pnl_pct": 0.94,
+      "win": true,
+      "score": 52,
+      "factors": [
+        "SMA+",
+        "RSI:buy_zone",
+        "BB:low",
+        "Vol+",
+        "VWAP:buy"
+      ],
+      "rsi": 31.4,
+      "regime": "range",
+      "hold_hours": 5.0,
+      "reason": "TIME_EXIT: 20 bars, +0.9%"
+    },
+    {
+      "timestamp": "2025-12-12 20:30:00+00:00",
+      "ticker": "AAPL",
+      "pnl": -0.0318,
+      "pnl_pct": -0.32,
+      "win": false,
+      "score": 51,
+      "factors": [
+        "SMA+",
+        "RSI:neutral",
+        "MACD+",
+        "MACD++",
+        "Vol+",
+        "momentum:up"
+      ],
+      "rsi": 57.4,
+      "regime": "range",
+      "hold_hours": 5.0,
+      "reason": "TIME_EXIT: 20 bars, -0.3%"
+    },
+    {
+      "timestamp": "2025-12-16 16:30:00+00:00",
+      "ticker": "AAPL",
+      "pnl": -0.042,
+      "pnl_pct": -0.42,
+      "win": false,
+      "score": 50,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "VWAP:buy"
+      ],
+      "rsi": 45.8,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, -0.4%"
+    },
+    {
+      "timestamp": "2025-12-17 17:00:00+00:00",
+      "ticker": "AAPL",
+      "pnl": -0.0388,
+      "pnl_pct": -0.39,
+      "win": false,
+      "score": 51,
+      "factors": [
+        "RSI:neutral",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "momentum:up",
+        "VWAP:buy"
+      ],
+      "rsi": 51.6,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, -0.4%"
+    },
+    {
+      "timestamp": "2025-12-18 17:45:00+00:00",
+      "ticker": "AAPL",
+      "pnl": -0.051,
+      "pnl_pct": -0.51,
+      "win": false,
+      "score": 50,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "VWAP:buy"
+      ],
+      "rsi": 41.8,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, -0.5%"
+    },
+    {
+      "timestamp": "2025-12-19 18:45:00+00:00",
+      "ticker": "AAPL",
+      "pnl": -0.0361,
+      "pnl_pct": -0.36,
+      "win": false,
+      "score": 50,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "VWAP:buy"
+      ],
+      "rsi": 44.1,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, -0.4%"
+    },
+    {
+      "timestamp": "2025-12-22 17:30:00+00:00",
+      "ticker": "AAPL",
+      "pnl": 0.0288,
+      "pnl_pct": 0.29,
+      "win": true,
+      "score": 50,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "VWAP:buy"
+      ],
+      "rsi": 41.2,
+      "regime": "range",
+      "hold_hours": 70.5,
+      "reason": "TIME_EXIT: 20 bars, +0.3%"
+    },
+    {
+      "timestamp": "2025-12-23 19:45:00+00:00",
+      "ticker": "AAPL",
+      "pnl": 0.0315,
+      "pnl_pct": 0.32,
+      "win": true,
+      "score": 60,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "Vol+",
+        "VWAP:buy"
+      ],
+      "rsi": 43.7,
+      "regime": "range",
+      "hold_hours": 5.0,
+      "reason": "TIME_EXIT: 20 bars, +0.3%"
+    },
+    {
+      "timestamp": "2025-12-26 15:45:00+00:00",
+      "ticker": "AAPL",
+      "pnl": 0.0912,
+      "pnl_pct": 0.91,
+      "win": true,
+      "score": 52,
+      "factors": [
+        "SMA+",
+        "RSI:neutral",
+        "MACD+",
+        "MACD++",
+        "BB:hi!",
+        "Vol+"
+      ],
+      "rsi": 64.0,
+      "regime": "range",
+      "hold_hours": 67.0,
+      "reason": "TIME_EXIT: 20 bars, +0.9%"
+    },
+    {
+      "timestamp": "2025-12-30 16:30:00+00:00",
+      "ticker": "AAPL",
+      "pnl": -0.0282,
+      "pnl_pct": -0.28,
+      "win": false,
+      "score": 50,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "VWAP:buy"
+      ],
+      "rsi": 47.0,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, -0.3%"
+    },
+    {
+      "timestamp": "2025-12-31 16:30:00+00:00",
+      "ticker": "AAPL",
+      "pnl": -0.0242,
+      "pnl_pct": -0.24,
+      "win": false,
+      "score": 50,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "VWAP:buy"
+      ],
+      "rsi": 46.4,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, -0.2%"
+    },
+    {
+      "timestamp": "2026-01-02 15:45:00+00:00",
+      "ticker": "AAPL",
+      "pnl": -0.0741,
+      "pnl_pct": -0.74,
+      "win": false,
+      "score": 50,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "VWAP:buy"
+      ],
+      "rsi": 43.9,
+      "regime": "range",
+      "hold_hours": 46.5,
+      "reason": "TIME_EXIT: 20 bars, -0.7%"
+    },
+    {
+      "timestamp": "2026-01-05 14:30:00+00:00",
+      "ticker": "AAPL",
+      "pnl": -0.0534,
+      "pnl_pct": -0.53,
+      "win": false,
+      "score": 52,
+      "factors": [
+        "SMA+",
+        "RSI:buy_zone",
+        "BB:low",
+        "Vol+",
+        "VWAP:buy"
+      ],
+      "rsi": 40.8,
+      "regime": "range",
+      "hold_hours": 70.5,
+      "reason": "TIME_EXIT: 20 bars, -0.5%"
+    },
+    {
+      "timestamp": "2026-01-05 19:45:00+00:00",
+      "ticker": "AAPL",
+      "pnl": -0.1164,
+      "pnl_pct": -1.16,
+      "win": false,
+      "score": 50,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "BB:low",
+        "Vol+",
+        "VWAP:buy"
+      ],
+      "rsi": 42.7,
+      "regime": "range",
+      "hold_hours": 5.0,
+      "reason": "TIME_EXIT: 20 bars, -1.2%"
+    },
+    {
+      "timestamp": "2026-01-06 18:45:00+00:00",
+      "ticker": "AAPL",
+      "pnl": -0.1546,
+      "pnl_pct": -1.55,
+      "win": false,
+      "score": 50,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "VWAP:buy"
+      ],
+      "rsi": 39.5,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, -1.5%"
+    },
+    {
+      "timestamp": "2026-01-07 17:45:00+00:00",
+      "ticker": "AAPL",
+      "pnl": -0.0214,
+      "pnl_pct": -0.21,
+      "win": false,
+      "score": 50,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "VWAP:buy"
+      ],
+      "rsi": 39.5,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, -0.2%"
+    },
+    {
+      "timestamp": "2026-01-08 17:00:00+00:00",
+      "ticker": "AAPL",
+      "pnl": -0.1747,
+      "pnl_pct": -1.75,
+      "win": false,
+      "score": 56,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "momentum:up",
+        "VWAP:buy"
+      ],
+      "rsi": 48.0,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, -1.7%"
+    },
+    {
+      "timestamp": "2026-01-09 16:00:00+00:00",
+      "ticker": "AAPL",
+      "pnl": 0.0401,
+      "pnl_pct": 0.4,
+      "win": true,
+      "score": 50,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "VWAP:buy"
+      ],
+      "rsi": 31.7,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, +0.4%"
+    },
+    {
+      "timestamp": "2026-01-12 15:00:00+00:00",
+      "ticker": "AAPL",
+      "pnl": 0.1049,
+      "pnl_pct": 1.05,
+      "win": true,
+      "score": 50,
+      "factors": [
+        "SMA+",
+        "RSI:buy_zone",
+        "MACD+",
+        "BB:low",
+        "VWAP:buy"
+      ],
+      "rsi": 49.5,
+      "regime": "range",
+      "hold_hours": 70.5,
+      "reason": "TIME_EXIT: 20 bars, +1.0%"
+    },
+    {
+      "timestamp": "2026-01-13 14:30:00+00:00",
+      "ticker": "AAPL",
+      "pnl": -0.0038,
+      "pnl_pct": -0.04,
+      "win": false,
+      "score": 51,
+      "factors": [
+        "SMA+",
+        "RSI:neutral",
+        "MACD+",
+        "MACD++",
+        "momentum:up",
+        "VWAP:buy"
+      ],
+      "rsi": 55.5,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, -0.0%"
+    },
+    {
+      "timestamp": "2026-01-14 16:30:00+00:00",
+      "ticker": "AAPL",
+      "pnl": -0.1138,
+      "pnl_pct": -1.14,
+      "win": false,
+      "score": 50,
+      "factors": [
+        "SMA+",
+        "GoldenX",
+        "RSI:neutral",
+        "MACD+",
+        "MACD++",
+        "VWAP:buy"
+      ],
+      "rsi": 59.1,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, -1.1%"
+    },
+    {
+      "timestamp": "2026-01-15 17:15:00+00:00",
+      "ticker": "AAPL",
+      "pnl": 0.0515,
+      "pnl_pct": 0.52,
+      "win": true,
+      "score": 50,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "VWAP:buy"
+      ],
+      "rsi": 31.7,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, +0.5%"
+    },
+    {
+      "timestamp": "2026-01-16 19:15:00+00:00",
+      "ticker": "AAPL",
+      "pnl": -0.0902,
+      "pnl_pct": -0.9,
+      "win": false,
+      "score": 51,
+      "factors": [
+        "RSI:buy_zone",
+        "BB:mid",
+        "Vol+",
+        "momentum:up",
+        "VWAP:buy"
+      ],
+      "rsi": 39.4,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, -0.9%"
+    },
+    {
+      "timestamp": "2026-01-20 19:00:00+00:00",
+      "ticker": "AAPL",
+      "pnl": -0.2942,
+      "pnl_pct": -2.94,
+      "win": false,
+      "score": 50,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "BB:low",
+        "Vol+",
+        "VWAP:buy"
+      ],
+      "rsi": 43.6,
+      "regime": "range",
+      "hold_hours": 94.5,
+      "reason": "TIME_EXIT: 20 bars, -2.9%"
+    },
+    {
+      "timestamp": "2026-01-21 19:45:00+00:00",
+      "ticker": "AAPL",
+      "pnl": 0.1543,
+      "pnl_pct": 1.54,
+      "win": true,
+      "score": 50,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "VWAP:buy"
+      ],
+      "rsi": 30.6,
+      "regime": "range",
+      "hold_hours": 5.0,
+      "reason": "TIME_EXIT: 20 bars, +1.5%"
+    },
+    {
+      "timestamp": "2026-01-22 19:15:00+00:00",
+      "ticker": "AAPL",
+      "pnl": 0.1167,
+      "pnl_pct": 1.17,
+      "win": true,
+      "score": 58,
+      "factors": [
+        "SMA+",
+        "RSI:neutral",
+        "MACD+",
+        "BB:mid",
+        "Vol+",
+        "VWAP:buy"
+      ],
+      "rsi": 59.8,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, +1.2%"
+    },
+    {
+      "timestamp": "2026-01-23 18:15:00+00:00",
+      "ticker": "AAPL",
+      "pnl": -0.0382,
+      "pnl_pct": -0.38,
+      "win": false,
+      "score": 52,
+      "factors": [
+        "SMA+",
+        "RSI:buy_zone",
+        "BB:low",
+        "Vol+",
+        "VWAP:buy"
+      ],
+      "rsi": 41.5,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, -0.4%"
+    },
+    {
+      "timestamp": "2026-01-26 18:15:00+00:00",
+      "ticker": "AAPL",
+      "pnl": 0.2611,
+      "pnl_pct": 2.61,
+      "win": true,
+      "score": 50,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "VWAP:buy"
+      ],
+      "rsi": 47.8,
+      "regime": "range",
+      "hold_hours": 70.5,
+      "reason": "TIME_EXIT: 20 bars, +2.6%"
+    },
+    {
+      "timestamp": "2026-01-29 17:15:00+00:00",
+      "ticker": "AAPL",
+      "pnl": 0.0612,
+      "pnl_pct": 0.61,
+      "win": true,
+      "score": 50,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "VWAP:buy"
+      ],
+      "rsi": 43.9,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, +0.6%"
+    },
+    {
+      "timestamp": "2026-01-30 19:45:00+00:00",
+      "ticker": "AAPL",
+      "pnl": 0.0773,
+      "pnl_pct": 0.77,
+      "win": true,
+      "score": 65,
+      "factors": [
+        "SMA+",
+        "RSI:buy_zone",
+        "BB:mid",
+        "Vol+",
+        "momentum:strong_up",
+        "VWAP:buy"
+      ],
+      "rsi": 46.8,
+      "regime": "range",
+      "hold_hours": 5.0,
+      "reason": "TIME_EXIT: 20 bars, +0.8%"
+    },
+    {
+      "timestamp": "2026-02-11 16:15:00+00:00",
+      "ticker": "AAPL",
+      "pnl": 0.1496,
+      "pnl_pct": 1.5,
+      "win": true,
+      "score": 50,
+      "factors": [
+        "SMA+",
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid"
+      ],
+      "rsi": 44.8,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, +1.5%"
+    },
+    {
+      "timestamp": "2026-02-13 19:15:00+00:00",
+      "ticker": "AAPL",
+      "pnl": -0.1197,
+      "pnl_pct": -1.2,
+      "win": false,
+      "score": 66,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "Vol+",
+        "momentum:up"
+      ],
+      "rsi": 33.8,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, -1.2%"
+    },
+    {
+      "timestamp": "2025-11-20 18:45:00+00:00",
+      "ticker": "MSFT",
+      "pnl": -0.17,
+      "pnl_pct": -1.7,
+      "win": false,
+      "score": 56,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "momentum:up",
+        "VWAP:buy"
+      ],
+      "rsi": 45.6,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, -1.7%"
+    },
+    {
+      "timestamp": "2025-11-24 15:30:00+00:00",
+      "ticker": "MSFT",
+      "pnl": -0.0009,
+      "pnl_pct": -0.01,
+      "win": false,
+      "score": 56,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "momentum:up",
+        "VWAP:buy"
+      ],
+      "rsi": 39.7,
+      "regime": "range",
+      "hold_hours": 70.5,
+      "reason": "TIME_EXIT: 20 bars, -0.0%"
+    },
+    {
+      "timestamp": "2025-11-24 20:45:00+00:00",
+      "ticker": "MSFT",
+      "pnl": 0.0034,
+      "pnl_pct": 0.03,
+      "win": true,
+      "score": 50,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "VWAP:buy"
+      ],
+      "rsi": 46.7,
+      "regime": "range",
+      "hold_hours": 5.0,
+      "reason": "TIME_EXIT: 20 bars, +0.0%"
+    },
+    {
+      "timestamp": "2025-11-26 15:00:00+00:00",
+      "ticker": "MSFT",
+      "pnl": 0.1977,
+      "pnl_pct": 1.98,
+      "win": true,
+      "score": 56,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "momentum:up",
+        "VWAP:buy"
+      ],
+      "rsi": 46.9,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, +2.0%"
+    },
+    {
+      "timestamp": "2025-12-04 15:45:00+00:00",
+      "ticker": "MSFT",
+      "pnl": -0.0918,
+      "pnl_pct": -0.92,
+      "win": false,
+      "score": 51,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "momentum:up",
+        "VWAP:at"
+      ],
+      "rsi": 35.7,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, -0.9%"
+    },
+    {
+      "timestamp": "2025-12-05 15:15:00+00:00",
+      "ticker": "MSFT",
+      "pnl": 0.0945,
+      "pnl_pct": 0.94,
+      "win": true,
+      "score": 56,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "momentum:up",
+        "VWAP:buy"
+      ],
+      "rsi": 33.5,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, +0.9%"
+    },
+    {
+      "timestamp": "2025-12-11 18:15:00+00:00",
+      "ticker": "MSFT",
+      "pnl": 0.0774,
+      "pnl_pct": 0.77,
+      "win": true,
+      "score": 56,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "momentum:up",
+        "VWAP:buy"
+      ],
+      "rsi": 41.7,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, +0.8%"
+    },
+    {
+      "timestamp": "2025-12-12 19:30:00+00:00",
+      "ticker": "MSFT",
+      "pnl": -0.0051,
+      "pnl_pct": -0.05,
+      "win": false,
+      "score": 52,
+      "factors": [
+        "SMA+",
+        "RSI:buy_zone",
+        "BB:low",
+        "Vol+",
+        "VWAP:buy"
+      ],
+      "rsi": 43.7,
+      "regime": "range",
+      "hold_hours": 5.0,
+      "reason": "TIME_EXIT: 20 bars, -0.1%"
+    },
+    {
+      "timestamp": "2025-12-15 19:15:00+00:00",
+      "ticker": "MSFT",
+      "pnl": -0.0913,
+      "pnl_pct": -0.91,
+      "win": false,
+      "score": 55,
+      "factors": [
+        "RSI:neutral",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "Vol+",
+        "VWAP:buy"
+      ],
+      "rsi": 60.5,
+      "regime": "range",
+      "hold_hours": 70.5,
+      "reason": "TIME_EXIT: 20 bars, -0.9%"
+    },
+    {
+      "timestamp": "2025-12-16 18:15:00+00:00",
+      "ticker": "MSFT",
+      "pnl": -0.0253,
+      "pnl_pct": -0.25,
+      "win": false,
+      "score": 50,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "VWAP:buy"
+      ],
+      "rsi": 43.3,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, -0.3%"
+    },
+    {
+      "timestamp": "2025-12-17 17:30:00+00:00",
+      "ticker": "MSFT",
+      "pnl": 0.0587,
+      "pnl_pct": 0.59,
+      "win": true,
+      "score": 53,
+      "factors": [
+        "SMA+",
+        "GoldenX",
+        "RSI:neutral",
+        "MACD+",
+        "BB:mid",
+        "VWAP:buy"
+      ],
+      "rsi": 53.5,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, +0.6%"
+    },
+    {
+      "timestamp": "2025-12-18 19:15:00+00:00",
+      "ticker": "MSFT",
+      "pnl": 0.199,
+      "pnl_pct": 1.99,
+      "win": true,
+      "score": 52,
+      "factors": [
+        "SMA+",
+        "RSI:buy_zone",
+        "BB:low",
+        "Vol+",
+        "VWAP:buy"
+      ],
+      "rsi": 42.6,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, +2.0%"
+    },
+    {
+      "timestamp": "2025-12-19 19:30:00+00:00",
+      "ticker": "MSFT",
+      "pnl": -0.033,
+      "pnl_pct": -0.33,
+      "win": false,
+      "score": 51,
+      "factors": [
+        "SMA+",
+        "RSI:buy_zone",
+        "BB:mid",
+        "Vol+",
+        "momentum:up"
+      ],
+      "rsi": 46.8,
+      "regime": "range",
+      "hold_hours": 5.0,
+      "reason": "TIME_EXIT: 20 bars, -0.3%"
+    },
+    {
+      "timestamp": "2025-12-29 19:15:00+00:00",
+      "ticker": "MSFT",
+      "pnl": -0.0298,
+      "pnl_pct": -0.3,
+      "win": false,
+      "score": 52,
+      "factors": [
+        "SMA+",
+        "GoldenX",
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:hi!"
+      ],
+      "rsi": 47.8,
+      "regime": "range",
+      "hold_hours": 70.5,
+      "reason": "TIME_EXIT: 20 bars, -0.3%"
+    },
+    {
+      "timestamp": "2026-01-05 17:45:00+00:00",
+      "ticker": "MSFT",
+      "pnl": 0.0455,
+      "pnl_pct": 0.45,
+      "win": true,
+      "score": 50,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "VWAP:buy"
+      ],
+      "rsi": 40.0,
+      "regime": "range",
+      "hold_hours": 70.5,
+      "reason": "TIME_EXIT: 20 bars, +0.5%"
+    },
+    {
+      "timestamp": "2026-01-06 18:15:00+00:00",
+      "ticker": "MSFT",
+      "pnl": 0.0043,
+      "pnl_pct": 0.04,
+      "win": true,
+      "score": 53,
+      "factors": [
+        "SMA+",
+        "RSI:buy_zone",
+        "MACD+",
+        "BB:mid",
+        "VWAP:buy"
+      ],
+      "rsi": 48.5,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, +0.0%"
+    },
+    {
+      "timestamp": "2026-01-09 17:00:00+00:00",
+      "ticker": "MSFT",
+      "pnl": 0.0036,
+      "pnl_pct": 0.04,
+      "win": true,
+      "score": 50,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "VWAP:buy"
+      ],
+      "rsi": 42.7,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, +0.0%"
+    },
+    {
+      "timestamp": "2026-01-13 19:00:00+00:00",
+      "ticker": "MSFT",
+      "pnl": -0.2545,
+      "pnl_pct": -2.54,
+      "win": false,
+      "score": 50,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "BB:low",
+        "Vol+",
+        "VWAP:buy"
+      ],
+      "rsi": 41.2,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, -2.5%"
+    },
+    {
+      "timestamp": "2026-01-14 18:30:00+00:00",
+      "ticker": "MSFT",
+      "pnl": -0.1761,
+      "pnl_pct": -1.76,
+      "win": false,
+      "score": 50,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "VWAP:buy"
+      ],
+      "rsi": 36.2,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, -1.8%"
+    },
+    {
+      "timestamp": "2026-01-15 19:00:00+00:00",
+      "ticker": "MSFT",
+      "pnl": -0.0244,
+      "pnl_pct": -0.24,
+      "win": false,
+      "score": 50,
+      "factors": [
+        "RSI:oversold",
+        "MACD+",
+        "MACD++",
+        "BB:low",
+        "Vol+",
+        "VWAP:buy"
+      ],
+      "rsi": 19.0,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, -0.2%"
+    },
+    {
+      "timestamp": "2026-01-16 19:30:00+00:00",
+      "ticker": "MSFT",
+      "pnl": 0.0861,
+      "pnl_pct": 0.86,
+      "win": true,
+      "score": 66,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "Vol+",
+        "momentum:up"
+      ],
+      "rsi": 41.2,
+      "regime": "range",
+      "hold_hours": 5.0,
+      "reason": "TIME_EXIT: 20 bars, +0.9%"
+    },
+    {
+      "timestamp": "2026-01-20 19:15:00+00:00",
+      "ticker": "MSFT",
+      "pnl": -0.1472,
+      "pnl_pct": -1.47,
+      "win": false,
+      "score": 52,
+      "factors": [
+        "SMA+",
+        "RSI:buy_zone",
+        "BB:low",
+        "Vol+",
+        "VWAP:buy"
+      ],
+      "rsi": 42.8,
+      "regime": "range",
+      "hold_hours": 94.5,
+      "reason": "TIME_EXIT: 20 bars, -1.5%"
+    },
+    {
+      "timestamp": "2026-01-21 18:00:00+00:00",
+      "ticker": "MSFT",
+      "pnl": -0.2858,
+      "pnl_pct": -2.86,
+      "win": false,
+      "score": 56,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "momentum:up",
+        "VWAP:buy"
+      ],
+      "rsi": 41.4,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, -2.9%"
+    },
+    {
+      "timestamp": "2026-01-22 18:00:00+00:00",
+      "ticker": "MSFT",
+      "pnl": 0.1404,
+      "pnl_pct": 1.4,
+      "win": true,
+      "score": 70,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "Vol+",
+        "momentum:strong_up"
+      ],
+      "rsi": 39.7,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, +1.4%"
+    },
+    {
+      "timestamp": "2026-01-23 19:30:00+00:00",
+      "ticker": "MSFT",
+      "pnl": 0.32,
+      "pnl_pct": 3.2,
+      "win": true,
+      "score": 52,
+      "factors": [
+        "SMA+",
+        "MACD+",
+        "MACD++",
+        "BB:hi!",
+        "Vol+",
+        "momentum:strong_up"
+      ],
+      "rsi": 66.3,
+      "regime": "range",
+      "hold_hours": 5.0,
+      "reason": "TIME_EXIT: 20 bars, +3.2%"
+    },
+    {
+      "timestamp": "2026-01-26 19:15:00+00:00",
+      "ticker": "MSFT",
+      "pnl": 0.1444,
+      "pnl_pct": 1.44,
+      "win": true,
+      "score": 52,
+      "factors": [
+        "SMA+",
+        "RSI:buy_zone",
+        "BB:low",
+        "Vol+",
+        "VWAP:buy"
+      ],
+      "rsi": 35.5,
+      "regime": "range",
+      "hold_hours": 70.5,
+      "reason": "TIME_EXIT: 20 bars, +1.4%"
+    },
+    {
+      "timestamp": "2026-01-27 19:00:00+00:00",
+      "ticker": "MSFT",
+      "pnl": 0.1979,
+      "pnl_pct": 1.98,
+      "win": true,
+      "score": 55,
+      "factors": [
+        "SMA+",
+        "RSI:buy_zone",
+        "BB:mid",
+        "Vol+",
+        "VWAP:buy"
+      ],
+      "rsi": 45.8,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, +2.0%"
+    },
+    {
+      "timestamp": "2026-01-30 17:00:00+00:00",
+      "ticker": "MSFT",
+      "pnl": 0.1434,
+      "pnl_pct": 1.43,
+      "win": true,
+      "score": 50,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "VWAP:buy"
+      ],
+      "rsi": 35.6,
+      "regime": "normal",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, +1.4%"
+    },
+    {
+      "timestamp": "2026-02-02 16:15:00+00:00",
+      "ticker": "MSFT",
+      "pnl": -0.137,
+      "pnl_pct": -1.37,
+      "win": false,
+      "score": 53,
+      "factors": [
+        "SMA+",
+        "RSI:buy_zone",
+        "MACD+",
+        "BB:mid",
+        "VWAP:buy"
+      ],
+      "rsi": 44.5,
+      "regime": "range",
+      "hold_hours": 70.5,
+      "reason": "TIME_EXIT: 20 bars, -1.4%"
+    },
+    {
+      "timestamp": "2026-02-03 18:30:00+00:00",
+      "ticker": "MSFT",
+      "pnl": -0.3289,
+      "pnl_pct": -3.29,
+      "win": false,
+      "score": 56,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "momentum:up",
+        "VWAP:buy"
+      ],
+      "rsi": 39.8,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, -3.3%"
+    },
+    {
+      "timestamp": "2026-02-04 17:30:00+00:00",
+      "ticker": "MSFT",
+      "pnl": 0.0692,
+      "pnl_pct": 0.69,
+      "win": true,
+      "score": 56,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "momentum:up",
+        "VWAP:buy"
+      ],
+      "rsi": 43.5,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, +0.7%"
+    },
+    {
+      "timestamp": "2026-02-05 15:00:00+00:00",
+      "ticker": "MSFT",
+      "pnl": -0.416,
+      "pnl_pct": -4.16,
+      "win": false,
+      "score": 51,
+      "factors": [
+        "SMA+",
+        "RSI:neutral",
+        "MACD+",
+        "MACD++",
+        "momentum:up",
+        "VWAP:buy"
+      ],
+      "rsi": 63.5,
+      "regime": "range",
+      "hold_hours": 20.8,
+      "reason": "STOP_LOSS: -4.2%"
+    },
+    {
+      "timestamp": "2026-02-06 15:45:00+00:00",
+      "ticker": "MSFT",
+      "pnl": -0.287,
+      "pnl_pct": -2.87,
+      "win": false,
+      "score": 50,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "VWAP:buy"
+      ],
+      "rsi": 35.0,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, -2.9%"
+    },
+    {
+      "timestamp": "2026-02-09 14:30:00+00:00",
+      "ticker": "MSFT",
+      "pnl": 0.3266,
+      "pnl_pct": 3.27,
+      "win": true,
+      "score": 60,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "momentum:strong_up",
+        "VWAP:buy"
+      ],
+      "rsi": 41.6,
+      "regime": "range",
+      "hold_hours": 70.5,
+      "reason": "TIME_EXIT: 20 bars, +3.3%"
+    },
+    {
+      "timestamp": "2026-02-12 16:45:00+00:00",
+      "ticker": "MSFT",
+      "pnl": -0.0918,
+      "pnl_pct": -0.92,
+      "win": false,
+      "score": 56,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "momentum:up",
+        "VWAP:buy"
+      ],
+      "rsi": 43.2,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, -0.9%"
+    },
+    {
+      "timestamp": "2026-02-13 15:30:00+00:00",
+      "ticker": "MSFT",
+      "pnl": -0.0272,
+      "pnl_pct": -0.27,
+      "win": false,
+      "score": 50,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "VWAP:buy"
+      ],
+      "rsi": 36.0,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, -0.3%"
+    },
+    {
+      "timestamp": "2025-12-01 16:30:00+00:00",
+      "ticker": "GOOGL",
+      "pnl": -0.0075,
+      "pnl_pct": -0.08,
+      "win": false,
+      "score": 50,
+      "factors": [
+        "SMA+",
+        "RSI:buy_zone",
+        "MACD+",
+        "BB:low",
+        "Vol+"
+      ],
+      "rsi": 47.6,
+      "regime": "range",
+      "hold_hours": 73.5,
+      "reason": "TIME_EXIT: 20 bars, -0.1%"
+    },
+    {
+      "timestamp": "2025-12-03 19:45:00+00:00",
+      "ticker": "GOOGL",
+      "pnl": 0.1602,
+      "pnl_pct": 1.6,
+      "win": true,
+      "score": 55,
+      "factors": [
+        "SMA+",
+        "RSI:neutral",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "Vol+"
+      ],
+      "rsi": 64.6,
+      "regime": "range",
+      "hold_hours": 5.0,
+      "reason": "TIME_EXIT: 20 bars, +1.6%"
+    },
+    {
+      "timestamp": "2025-12-15 16:00:00+00:00",
+      "ticker": "GOOGL",
+      "pnl": -0.0627,
+      "pnl_pct": -0.63,
+      "win": false,
+      "score": 56,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "momentum:up",
+        "VWAP:buy"
+      ],
+      "rsi": 40.8,
+      "regime": "range",
+      "hold_hours": 70.5,
+      "reason": "TIME_EXIT: 20 bars, -0.6%"
+    },
+    {
+      "timestamp": "2025-12-16 17:00:00+00:00",
+      "ticker": "GOOGL",
+      "pnl": -0.0625,
+      "pnl_pct": -0.62,
+      "win": false,
+      "score": 56,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "momentum:up",
+        "VWAP:buy"
+      ],
+      "rsi": 45.6,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, -0.6%"
+    },
+    {
+      "timestamp": "2025-12-17 17:45:00+00:00",
+      "ticker": "GOOGL",
+      "pnl": -0.1872,
+      "pnl_pct": -1.87,
+      "win": false,
+      "score": 50,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "VWAP:buy"
+      ],
+      "rsi": 35.5,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, -1.9%"
+    },
+    {
+      "timestamp": "2025-12-18 16:30:00+00:00",
+      "ticker": "GOOGL",
+      "pnl": 0.1194,
+      "pnl_pct": 1.19,
+      "win": true,
+      "score": 50,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "VWAP:buy"
+      ],
+      "rsi": 42.1,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, +1.2%"
+    },
+    {
+      "timestamp": "2025-12-19 18:30:00+00:00",
+      "ticker": "GOOGL",
+      "pnl": 0.0502,
+      "pnl_pct": 0.5,
+      "win": true,
+      "score": 51,
+      "factors": [
+        "SMA+",
+        "RSI:buy_zone",
+        "BB:mid",
+        "momentum:up",
+        "VWAP:buy"
+      ],
+      "rsi": 49.4,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, +0.5%"
+    },
+    {
+      "timestamp": "2025-12-22 18:45:00+00:00",
+      "ticker": "GOOGL",
+      "pnl": 0.1497,
+      "pnl_pct": 1.5,
+      "win": true,
+      "score": 52,
+      "factors": [
+        "SMA+",
+        "RSI:buy_zone",
+        "BB:low",
+        "Vol+",
+        "VWAP:buy"
+      ],
+      "rsi": 43.1,
+      "regime": "range",
+      "hold_hours": 70.5,
+      "reason": "TIME_EXIT: 20 bars, +1.5%"
+    },
+    {
+      "timestamp": "2026-01-20 19:00:00+00:00",
+      "ticker": "GOOGL",
+      "pnl": -0.1809,
+      "pnl_pct": -1.81,
+      "win": false,
+      "score": 50,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "Vol+"
+      ],
+      "rsi": 45.3,
+      "regime": "range",
+      "hold_hours": 94.5,
+      "reason": "TIME_EXIT: 20 bars, -1.8%"
+    },
+    {
+      "timestamp": "2026-01-22 18:15:00+00:00",
+      "ticker": "GOOGL",
+      "pnl": 0.0201,
+      "pnl_pct": 0.2,
+      "win": true,
+      "score": 53,
+      "factors": [
+        "SMA+",
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:hi!",
+        "Vol+"
+      ],
+      "rsi": 48.5,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, +0.2%"
+    },
+    {
+      "timestamp": "2026-01-30 15:30:00+00:00",
+      "ticker": "GOOGL",
+      "pnl": 0.1776,
+      "pnl_pct": 1.78,
+      "win": true,
+      "score": 50,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "momentum:strong_up"
+      ],
+      "rsi": 38.5,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, +1.8%"
+    },
+    {
+      "timestamp": "2026-02-04 19:15:00+00:00",
+      "ticker": "GOOGL",
+      "pnl": -0.2414,
+      "pnl_pct": -2.41,
+      "win": false,
+      "score": 50,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "Vol+"
+      ],
+      "rsi": 43.4,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, -2.4%"
+    },
+    {
+      "timestamp": "2026-02-12 16:45:00+00:00",
+      "ticker": "GOOGL",
+      "pnl": 0.0542,
+      "pnl_pct": 0.54,
+      "win": true,
+      "score": 56,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "momentum:up",
+        "VWAP:buy"
+      ],
+      "rsi": 34.9,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, +0.5%"
+    },
+    {
+      "timestamp": "2026-02-13 17:15:00+00:00",
+      "ticker": "GOOGL",
+      "pnl": -0.1512,
+      "pnl_pct": -1.51,
+      "win": false,
+      "score": 53,
+      "factors": [
+        "SMA+",
+        "RSI:buy_zone",
+        "MACD+",
+        "BB:mid",
+        "VWAP:buy"
+      ],
+      "rsi": 46.6,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, -1.5%"
+    },
+    {
+      "timestamp": "2025-11-20 18:15:00+00:00",
+      "ticker": "META",
+      "pnl": 0.0719,
+      "pnl_pct": 0.72,
+      "win": true,
+      "score": 56,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "momentum:up",
+        "VWAP:buy"
+      ],
+      "rsi": 41.4,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, +0.7%"
+    },
+    {
+      "timestamp": "2025-11-21 19:15:00+00:00",
+      "ticker": "META",
+      "pnl": 0.1417,
+      "pnl_pct": 1.42,
+      "win": true,
+      "score": 65,
+      "factors": [
+        "RSI:neutral",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "Vol+",
+        "momentum:strong_up"
+      ],
+      "rsi": 53.7,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, +1.4%"
+    },
+    {
+      "timestamp": "2025-11-24 19:30:00+00:00",
+      "ticker": "META",
+      "pnl": 0.2081,
+      "pnl_pct": 2.08,
+      "win": true,
+      "score": 52,
+      "factors": [
+        "SMA+",
+        "RSI:neutral",
+        "MACD+",
+        "MACD++",
+        "BB:hi!",
+        "Vol+"
+      ],
+      "rsi": 63.8,
+      "regime": "range",
+      "hold_hours": 5.0,
+      "reason": "TIME_EXIT: 20 bars, +2.1%"
+    },
+    {
+      "timestamp": "2025-12-05 19:30:00+00:00",
+      "ticker": "META",
+      "pnl": 0.1247,
+      "pnl_pct": 1.25,
+      "win": true,
+      "score": 51,
+      "factors": [
+        "SMA+",
+        "RSI:buy_zone",
+        "BB:mid",
+        "Vol+",
+        "momentum:up"
+      ],
+      "rsi": 47.2,
+      "regime": "range",
+      "hold_hours": 5.0,
+      "reason": "TIME_EXIT: 20 bars, +1.2%"
+    },
+    {
+      "timestamp": "2025-12-11 18:15:00+00:00",
+      "ticker": "META",
+      "pnl": 0.0027,
+      "pnl_pct": 0.03,
+      "win": true,
+      "score": 60,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "Vol+",
+        "momentum:strong_up"
+      ],
+      "rsi": 40.2,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, +0.0%"
+    },
+    {
+      "timestamp": "2025-12-12 17:00:00+00:00",
+      "ticker": "META",
+      "pnl": -0.1648,
+      "pnl_pct": -1.65,
+      "win": false,
+      "score": 52,
+      "factors": [
+        "SMA+",
+        "GoldenX",
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:hi!"
+      ],
+      "rsi": 48.1,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, -1.6%"
+    },
+    {
+      "timestamp": "2025-12-22 20:00:00+00:00",
+      "ticker": "META",
+      "pnl": -0.1056,
+      "pnl_pct": -1.06,
+      "win": false,
+      "score": 53,
+      "factors": [
+        "SMA+",
+        "RSI:buy_zone",
+        "MACD+",
+        "BB:mid",
+        "Vol+"
+      ],
+      "rsi": 46.9,
+      "regime": "range",
+      "hold_hours": 5.0,
+      "reason": "TIME_EXIT: 20 bars, -1.1%"
+    },
+    {
+      "timestamp": "2025-12-29 19:15:00+00:00",
+      "ticker": "META",
+      "pnl": -0.0871,
+      "pnl_pct": -0.87,
+      "win": false,
+      "score": 50,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "Vol+"
+      ],
+      "rsi": 47.3,
+      "regime": "range",
+      "hold_hours": 70.5,
+      "reason": "TIME_EXIT: 20 bars, -0.9%"
+    },
+    {
+      "timestamp": "2026-01-14 16:30:00+00:00",
+      "ticker": "META",
+      "pnl": -0.1634,
+      "pnl_pct": -1.63,
+      "win": false,
+      "score": 56,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "momentum:up",
+        "VWAP:buy"
+      ],
+      "rsi": 35.9,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, -1.6%"
+    },
+    {
+      "timestamp": "2026-01-15 17:15:00+00:00",
+      "ticker": "META",
+      "pnl": 0.0702,
+      "pnl_pct": 0.7,
+      "win": true,
+      "score": 56,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "momentum:up",
+        "VWAP:buy"
+      ],
+      "rsi": 39.1,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, +0.7%"
+    },
+    {
+      "timestamp": "2026-01-16 19:15:00+00:00",
+      "ticker": "META",
+      "pnl": 0.038,
+      "pnl_pct": 0.38,
+      "win": true,
+      "score": 55,
+      "factors": [
+        "SMA+",
+        "RSI:buy_zone",
+        "BB:mid",
+        "Vol+",
+        "VWAP:buy"
+      ],
+      "rsi": 46.8,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, +0.4%"
+    },
+    {
+      "timestamp": "2026-01-20 18:30:00+00:00",
+      "ticker": "META",
+      "pnl": -0.2817,
+      "pnl_pct": -2.82,
+      "win": false,
+      "score": 52,
+      "factors": [
+        "SMA+",
+        "RSI:buy_zone",
+        "BB:low",
+        "Vol+",
+        "VWAP:buy"
+      ],
+      "rsi": 44.9,
+      "regime": "range",
+      "hold_hours": 94.5,
+      "reason": "TIME_EXIT: 20 bars, -2.8%"
+    },
+    {
+      "timestamp": "2026-01-21 19:00:00+00:00",
+      "ticker": "META",
+      "pnl": 0.0708,
+      "pnl_pct": 0.71,
+      "win": true,
+      "score": 50,
+      "factors": [
+        "RSI:oversold",
+        "MACD+",
+        "MACD++",
+        "BB:low",
+        "Vol+",
+        "VWAP:buy"
+      ],
+      "rsi": 27.9,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, +0.7%"
+    },
+    {
+      "timestamp": "2026-01-22 17:30:00+00:00",
+      "ticker": "META",
+      "pnl": 0.5376,
+      "pnl_pct": 5.38,
+      "win": true,
+      "score": 52,
+      "factors": [
+        "SMA+",
+        "RSI:neutral",
+        "MACD+",
+        "MACD++",
+        "BB:hi!",
+        "momentum:strong_up"
+      ],
+      "rsi": 52.1,
+      "regime": "range",
+      "hold_hours": 22.2,
+      "reason": "PROFIT_TARGET: +5.4%"
+    },
+    {
+      "timestamp": "2026-02-04 19:00:00+00:00",
+      "ticker": "META",
+      "pnl": -0.2762,
+      "pnl_pct": -2.76,
+      "win": false,
+      "score": 56,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "Vol+",
+        "momentum:up"
+      ],
+      "rsi": 33.4,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, -2.8%"
+    },
+    {
+      "timestamp": "2026-02-09 15:45:00+00:00",
+      "ticker": "META",
+      "pnl": 0.0628,
+      "pnl_pct": 0.63,
+      "win": true,
+      "score": 50,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "momentum:strong_up"
+      ],
+      "rsi": 39.8,
+      "regime": "range",
+      "hold_hours": 70.5,
+      "reason": "TIME_EXIT: 20 bars, +0.6%"
+    },
+    {
+      "timestamp": "2026-02-12 19:30:00+00:00",
+      "ticker": "META",
+      "pnl": -0.1856,
+      "pnl_pct": -1.86,
+      "win": false,
+      "score": 53,
+      "factors": [
+        "SMA+",
+        "RSI:buy_zone",
+        "MACD+",
+        "BB:mid",
+        "Vol+"
+      ],
+      "rsi": 49.9,
+      "regime": "range",
+      "hold_hours": 5.0,
+      "reason": "TIME_EXIT: 20 bars, -1.9%"
+    },
+    {
+      "timestamp": "2026-02-13 19:15:00+00:00",
+      "ticker": "META",
+      "pnl": -0.0551,
+      "pnl_pct": -0.55,
+      "win": false,
+      "score": 50,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "BB:low",
+        "Vol+",
+        "VWAP:buy"
+      ],
+      "rsi": 43.5,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, -0.6%"
+    },
+    {
+      "timestamp": "2025-11-21 17:30:00+00:00",
+      "ticker": "F",
+      "pnl": 0.272,
+      "pnl_pct": 2.72,
+      "win": true,
+      "score": 50,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "VWAP:buy"
+      ],
+      "rsi": 30.9,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, +2.7%"
+    },
+    {
+      "timestamp": "2025-12-09 20:30:00+00:00",
+      "ticker": "F",
+      "pnl": -0.0342,
+      "pnl_pct": -0.34,
+      "win": false,
+      "score": 55,
+      "factors": [
+        "SMA+",
+        "RSI:neutral",
+        "MACD+",
+        "MACD++",
+        "Vol+",
+        "momentum:strong_up"
+      ],
+      "rsi": 50.0,
+      "regime": "range",
+      "hold_hours": 5.0,
+      "reason": "TIME_EXIT: 20 bars, -0.3%"
+    },
+    {
+      "timestamp": "2025-12-19 15:45:00+00:00",
+      "ticker": "F",
+      "pnl": 0.0527,
+      "pnl_pct": 0.53,
+      "win": true,
+      "score": 50,
+      "factors": [
+        "SMA+",
+        "RSI:buy_zone",
+        "MACD+",
+        "BB:low",
+        "Vol+"
+      ],
+      "rsi": 46.4,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, +0.5%"
+    },
+    {
+      "timestamp": "2025-12-26 20:45:00+00:00",
+      "ticker": "F",
+      "pnl": 0.0113,
+      "pnl_pct": 0.11,
+      "win": true,
+      "score": 50,
+      "factors": [
+        "SMA+",
+        "RSI:buy_zone",
+        "MACD+",
+        "BB:low",
+        "Vol+"
+      ],
+      "rsi": 47.4,
+      "regime": "range",
+      "hold_hours": 5.0,
+      "reason": "TIME_EXIT: 20 bars, +0.1%"
+    },
+    {
+      "timestamp": "2025-12-30 16:15:00+00:00",
+      "ticker": "F",
+      "pnl": -0.0038,
+      "pnl_pct": -0.04,
+      "win": false,
+      "score": 50,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "Vol+"
+      ],
+      "rsi": 45.5,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, -0.0%"
+    },
+    {
+      "timestamp": "2026-01-02 18:00:00+00:00",
+      "ticker": "F",
+      "pnl": 0.0787,
+      "pnl_pct": 0.79,
+      "win": true,
+      "score": 50,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "BB:low",
+        "Vol+",
+        "VWAP:buy"
+      ],
+      "rsi": 44.9,
+      "regime": "range",
+      "hold_hours": 46.5,
+      "reason": "TIME_EXIT: 20 bars, +0.8%"
+    },
+    {
+      "timestamp": "2026-01-13 19:15:00+00:00",
+      "ticker": "F",
       "pnl": 0.0,
       "pnl_pct": 0.0,
       "win": false,
       "score": 50,
-      "factors": [],
-      "rsi": 50,
-      "regime": "trend",
-      "hold_hours": 39.4,
-      "reason": "RECYCLE: 39h held, +0.00% \u2014 freeing capital"
-    },
-    {
-      "timestamp": "2026-02-09T14:30:48.259917",
-      "ticker": "SNAP",
-      "pnl": -0.075,
-      "pnl_pct": -1.44,
-      "win": false,
-      "score": 63,
       "factors": [
-        "SMA+",
-        "RSI:39*",
+        "RSI:buy_zone",
         "MACD+",
+        "MACD++",
         "BB:mid",
-        "Vol+",
-        "VWAP:buy"
+        "Vol+"
       ],
-      "rsi": 50,
-      "regime": "normal",
-      "hold_hours": 22.0,
-      "reason": "RECYCLE: 22h held, -1.44% \u2014 freeing capital"
+      "rsi": 47.8,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, +0.0%"
     },
     {
-      "timestamp": "2026-02-09T19:32:09.099502",
-      "ticker": "SNAP",
-      "pnl": 0.0019,
-      "pnl_pct": 0.04,
-      "win": true,
-      "score": 63,
-      "factors": [
-        "SMA+",
-        "RSI:39*",
-        "MACD+",
-        "BB:mid",
-        "Vol+",
-        "VWAP:buy"
-      ],
-      "rsi": 50,
-      "regime": "normal",
-      "hold_hours": 27.0,
-      "reason": "STOP_LOSS"
-    },
-    {
-      "timestamp": "2026-02-10T02:05:58.146488",
-      "ticker": "SNAP",
-      "pnl": -0.04,
-      "pnl_pct": -0.77,
-      "win": false,
-      "score": 63,
-      "factors": [
-        "SMA+",
-        "RSI:39*",
-        "MACD+",
-        "BB:mid",
-        "Vol+",
-        "VWAP:buy"
-      ],
-      "rsi": 50,
-      "regime": "normal",
-      "hold_hours": 33.6,
-      "reason": "RECYCLE: 6h held, +0.00% \u2014 freeing capital"
-    },
-    {
-      "timestamp": "2026-02-13T20:45:20.715394",
-      "ticker": "NOK",
-      "pnl": -0.06,
-      "pnl_pct": -0.85,
+      "timestamp": "2026-01-15 18:45:00+00:00",
+      "ticker": "F",
+      "pnl": -0.0072,
+      "pnl_pct": -0.07,
       "win": false,
       "score": 50,
-      "factors": [],
-      "rsi": 50,
-      "regime": "trend",
-      "hold_hours": 163.8,
-      "reason": "EOD CLOSE: small loss -0.7% ($-0.06)"
-    },
-    {
-      "timestamp": "2026-02-13T20:45:21.037122",
-      "ticker": "AAL",
-      "pnl": -0.0699,
-      "pnl_pct": -0.5,
-      "win": false,
-      "score": 66,
       "factors": [
-        "SMA+",
-        "RSI:48*",
+        "RSI:buy_zone",
         "MACD+",
         "MACD++",
         "BB:mid",
-        "+0.4%"
+        "Vol+"
       ],
-      "rsi": 50,
-      "regime": "normal",
-      "hold_hours": 2.2,
-      "reason": "EOD CLOSE: small loss -0.5% ($-0.05)"
+      "rsi": 35.3,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, -0.1%"
     },
     {
-      "timestamp": "2026-02-13T20:45:21.362042",
-      "ticker": "RIVN",
-      "pnl": 4.3615,
-      "pnl_pct": 23.15,
+      "timestamp": "2026-01-21 19:15:00+00:00",
+      "ticker": "F",
+      "pnl": 0.3249,
+      "pnl_pct": 3.25,
+      "win": true,
+      "score": 53,
+      "factors": [
+        "RSI:oversold",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "Vol+",
+        "VWAP:buy"
+      ],
+      "rsi": 27.3,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, +3.2%"
+    },
+    {
+      "timestamp": "2026-01-27 16:45:00+00:00",
+      "ticker": "F",
+      "pnl": 0.287,
+      "pnl_pct": 2.87,
+      "win": true,
+      "score": 51,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "momentum:up",
+        "VWAP:at"
+      ],
+      "rsi": 41.0,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, +2.9%"
+    },
+    {
+      "timestamp": "2026-01-30 19:15:00+00:00",
+      "ticker": "F",
+      "pnl": -0.1215,
+      "pnl_pct": -1.21,
+      "win": false,
+      "score": 51,
+      "factors": [
+        "SMA+",
+        "RSI:buy_zone",
+        "BB:mid",
+        "Vol+",
+        "momentum:up"
+      ],
+      "rsi": 48.8,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, -1.2%"
+    },
+    {
+      "timestamp": "2026-02-02 19:15:00+00:00",
+      "ticker": "F",
+      "pnl": -0.054,
+      "pnl_pct": -0.54,
+      "win": false,
+      "score": 50,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "Vol+"
+      ],
+      "rsi": 41.7,
+      "regime": "range",
+      "hold_hours": 70.5,
+      "reason": "TIME_EXIT: 20 bars, -0.5%"
+    },
+    {
+      "timestamp": "2026-02-03 19:15:00+00:00",
+      "ticker": "F",
+      "pnl": -0.1159,
+      "pnl_pct": -1.16,
+      "win": false,
+      "score": 50,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "Vol+"
+      ],
+      "rsi": 50.0,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, -1.2%"
+    },
+    {
+      "timestamp": "2026-02-04 19:00:00+00:00",
+      "ticker": "F",
+      "pnl": 0.0184,
+      "pnl_pct": 0.18,
+      "win": true,
+      "score": 50,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "Vol+"
+      ],
+      "rsi": 40.8,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, +0.2%"
+    },
+    {
+      "timestamp": "2026-02-06 16:00:00+00:00",
+      "ticker": "F",
+      "pnl": -0.0364,
+      "pnl_pct": -0.36,
+      "win": false,
+      "score": 56,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "Vol+",
+        "momentum:up"
+      ],
+      "rsi": 43.2,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, -0.4%"
+    },
+    {
+      "timestamp": "2026-02-10 16:00:00+00:00",
+      "ticker": "F",
+      "pnl": 0.0365,
+      "pnl_pct": 0.37,
+      "win": true,
+      "score": 50,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "Vol+"
+      ],
+      "rsi": 39.4,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, +0.4%"
+    },
+    {
+      "timestamp": "2025-11-20 14:30:00+00:00",
+      "ticker": "PLUG",
+      "pnl": 0.6794,
+      "pnl_pct": 6.79,
+      "win": true,
+      "score": 50,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "VWAP:buy"
+      ],
+      "rsi": 41.0,
+      "regime": "volatile",
+      "hold_hours": 20.2,
+      "reason": "PROFIT_TARGET: +6.8%"
+    },
+    {
+      "timestamp": "2025-11-21 15:30:00+00:00",
+      "ticker": "PLUG",
+      "pnl": -0.374,
+      "pnl_pct": -3.74,
+      "win": false,
+      "score": 58,
+      "factors": [
+        "SMA+",
+        "RSI:neutral",
+        "MACD+",
+        "BB:mid",
+        "momentum:strong_up",
+        "VWAP:buy"
+      ],
+      "rsi": 58.7,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, -3.7%"
+    },
+    {
+      "timestamp": "2025-11-24 14:30:00+00:00",
+      "ticker": "PLUG",
+      "pnl": 0.5134,
+      "pnl_pct": 5.13,
+      "win": true,
+      "score": 53,
+      "factors": [
+        "SMA+",
+        "GoldenX",
+        "RSI:neutral",
+        "MACD+",
+        "MACD++",
+        "BB:hi!"
+      ],
+      "rsi": 60.8,
+      "regime": "range",
+      "hold_hours": 68.8,
+      "reason": "PROFIT_TARGET: +5.1%"
+    },
+    {
+      "timestamp": "2025-11-24 20:15:00+00:00",
+      "ticker": "PLUG",
+      "pnl": 0.0257,
+      "pnl_pct": 0.26,
+      "win": true,
+      "score": 58,
+      "factors": [
+        "SMA+",
+        "RSI:neutral",
+        "MACD+",
+        "BB:mid",
+        "Vol+",
+        "VWAP:buy"
+      ],
+      "rsi": 54.3,
+      "regime": "range",
+      "hold_hours": 5.0,
+      "reason": "TIME_EXIT: 20 bars, +0.3%"
+    },
+    {
+      "timestamp": "2025-11-25 20:45:00+00:00",
+      "ticker": "PLUG",
+      "pnl": 0.3166,
+      "pnl_pct": 3.17,
+      "win": true,
+      "score": 52,
+      "factors": [
+        "RSI:buy_zone",
+        "BB:low",
+        "Vol+",
+        "momentum:strong_up",
+        "VWAP:buy"
+      ],
+      "rsi": 36.6,
+      "regime": "range",
+      "hold_hours": 5.0,
+      "reason": "TIME_EXIT: 20 bars, +3.2%"
+    },
+    {
+      "timestamp": "2025-11-26 20:15:00+00:00",
+      "ticker": "PLUG",
+      "pnl": 0.2535,
+      "pnl_pct": 2.54,
+      "win": true,
+      "score": 58,
+      "factors": [
+        "SMA+",
+        "RSI:neutral",
+        "MACD+",
+        "BB:mid",
+        "Vol+",
+        "VWAP:buy"
+      ],
+      "rsi": 51.5,
+      "regime": "range",
+      "hold_hours": 5.0,
+      "reason": "TIME_EXIT: 20 bars, +2.5%"
+    },
+    {
+      "timestamp": "2025-12-02 15:30:00+00:00",
+      "ticker": "PLUG",
+      "pnl": 0.3452,
+      "pnl_pct": 3.45,
+      "win": true,
+      "score": 55,
+      "factors": [
+        "RSI:buy_zone",
+        "BB:mid",
+        "Vol+",
+        "momentum:strong_up",
+        "VWAP:buy"
+      ],
+      "rsi": 32.8,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, +3.5%"
+    },
+    {
+      "timestamp": "2025-12-03 19:30:00+00:00",
+      "ticker": "PLUG",
+      "pnl": 0.0235,
+      "pnl_pct": 0.24,
+      "win": true,
+      "score": 55,
+      "factors": [
+        "SMA+",
+        "RSI:neutral",
+        "MACD+",
+        "MACD++",
+        "Vol+",
+        "momentum:strong_up"
+      ],
+      "rsi": 64.9,
+      "regime": "range",
+      "hold_hours": 5.0,
+      "reason": "TIME_EXIT: 20 bars, +0.2%"
+    },
+    {
+      "timestamp": "2025-12-05 18:00:00+00:00",
+      "ticker": "PLUG",
+      "pnl": 0.1131,
+      "pnl_pct": 1.13,
+      "win": true,
+      "score": 50,
+      "factors": [
+        "SMA+",
+        "RSI:neutral",
+        "BB:mid",
+        "Vol+",
+        "momentum:strong_up"
+      ],
+      "rsi": 52.9,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, +1.1%"
+    },
+    {
+      "timestamp": "2025-12-08 14:30:00+00:00",
+      "ticker": "PLUG",
+      "pnl": -0.4853,
+      "pnl_pct": -4.85,
+      "win": false,
+      "score": 51,
+      "factors": [
+        "SMA+",
+        "RSI:buy_zone",
+        "BB:mid",
+        "Vol+",
+        "momentum:up"
+      ],
+      "rsi": 48.3,
+      "regime": "range",
+      "hold_hours": 67.2,
+      "reason": "STOP_LOSS: -4.9%"
+    },
+    {
+      "timestamp": "2025-12-09 15:15:00+00:00",
+      "ticker": "PLUG",
+      "pnl": 0.3899,
+      "pnl_pct": 3.9,
+      "win": true,
+      "score": 50,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "momentum:strong_up"
+      ],
+      "rsi": 37.9,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, +3.9%"
+    },
+    {
+      "timestamp": "2025-12-11 14:45:00+00:00",
+      "ticker": "PLUG",
+      "pnl": -0.5149,
+      "pnl_pct": -5.15,
+      "win": false,
+      "score": 52,
+      "factors": [
+        "SMA+",
+        "RSI:neutral",
+        "MACD+",
+        "MACD++",
+        "BB:hi!",
+        "Vol+"
+      ],
+      "rsi": 62.2,
+      "regime": "range",
+      "hold_hours": 18.5,
+      "reason": "STOP_LOSS: -5.1%"
+    },
+    {
+      "timestamp": "2025-12-15 20:45:00+00:00",
+      "ticker": "PLUG",
+      "pnl": -0.4121,
+      "pnl_pct": -4.12,
+      "win": false,
+      "score": 50,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "momentum:strong_up"
+      ],
+      "rsi": 48.2,
+      "regime": "range",
+      "hold_hours": 2.8,
+      "reason": "STOP_LOSS: -4.1%"
+    },
+    {
+      "timestamp": "2025-12-17 14:30:00+00:00",
+      "ticker": "PLUG",
+      "pnl": 0.7862,
+      "pnl_pct": 7.86,
+      "win": true,
+      "score": 50,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "momentum:strong_up"
+      ],
+      "rsi": 35.6,
+      "regime": "range",
+      "hold_hours": 22.2,
+      "reason": "PROFIT_TARGET: +7.9%"
+    },
+    {
+      "timestamp": "2025-12-19 14:45:00+00:00",
+      "ticker": "PLUG",
+      "pnl": -0.6167,
+      "pnl_pct": -6.17,
+      "win": false,
+      "score": 54,
+      "factors": [
+        "SMA+",
+        "RSI:neutral",
+        "MACD+",
+        "BB:mid",
+        "Vol+",
+        "momentum:up"
+      ],
+      "rsi": 57.0,
+      "regime": "volatile",
+      "hold_hours": 22.5,
+      "reason": "STOP_LOSS: -6.2%"
+    },
+    {
+      "timestamp": "2025-12-22 15:30:00+00:00",
+      "ticker": "PLUG",
+      "pnl": 0.0005,
+      "pnl_pct": 0.0,
+      "win": true,
+      "score": 50,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "momentum:strong_up"
+      ],
+      "rsi": 37.2,
+      "regime": "range",
+      "hold_hours": 70.5,
+      "reason": "TIME_EXIT: 20 bars, +0.0%"
+    },
+    {
+      "timestamp": "2025-12-24 16:30:00+00:00",
+      "ticker": "PLUG",
+      "pnl": 0.3695,
+      "pnl_pct": 3.69,
+      "win": true,
+      "score": 66,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "Vol+",
+        "momentum:up"
+      ],
+      "rsi": 30.2,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, +3.7%"
+    },
+    {
+      "timestamp": "2025-12-26 19:45:00+00:00",
+      "ticker": "PLUG",
+      "pnl": 0.1699,
+      "pnl_pct": 1.7,
+      "win": true,
+      "score": 50,
+      "factors": [
+        "SMA+",
+        "RSI:neutral",
+        "BB:mid",
+        "momentum:strong_up",
+        "VWAP:buy"
+      ],
+      "rsi": 60.4,
+      "regime": "range",
+      "hold_hours": 5.0,
+      "reason": "TIME_EXIT: 20 bars, +1.7%"
+    },
+    {
+      "timestamp": "2025-12-29 15:30:00+00:00",
+      "ticker": "PLUG",
+      "pnl": -0.4348,
+      "pnl_pct": -4.35,
+      "win": false,
+      "score": 52,
+      "factors": [
+        "SMA+",
+        "RSI:buy_zone",
+        "BB:low",
+        "Vol+",
+        "VWAP:buy"
+      ],
+      "rsi": 36.8,
+      "regime": "range",
+      "hold_hours": 66.8,
+      "reason": "STOP_LOSS: -4.3%"
+    },
+    {
+      "timestamp": "2025-12-30 16:15:00+00:00",
+      "ticker": "PLUG",
+      "pnl": -0.1478,
+      "pnl_pct": -1.48,
+      "win": false,
+      "score": 60,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "momentum:strong_up",
+        "VWAP:buy"
+      ],
+      "rsi": 38.7,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, -1.5%"
+    },
+    {
+      "timestamp": "2025-12-31 15:00:00+00:00",
+      "ticker": "PLUG",
+      "pnl": 0.0253,
+      "pnl_pct": 0.25,
+      "win": true,
+      "score": 50,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "BB:low",
+        "Vol+",
+        "VWAP:buy"
+      ],
+      "rsi": 35.5,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, +0.3%"
+    },
+    {
+      "timestamp": "2025-12-31 20:45:00+00:00",
+      "ticker": "PLUG",
+      "pnl": 0.0249,
+      "pnl_pct": 0.25,
+      "win": true,
+      "score": 53,
+      "factors": [
+        "SMA+",
+        "GoldenX",
+        "RSI:neutral",
+        "MACD+",
+        "BB:mid",
+        "VWAP:buy"
+      ],
+      "rsi": 54.4,
+      "regime": "range",
+      "hold_hours": 5.0,
+      "reason": "TIME_EXIT: 20 bars, +0.2%"
+    },
+    {
+      "timestamp": "2026-01-12 16:30:00+00:00",
+      "ticker": "PLUG",
+      "pnl": 0.604,
+      "pnl_pct": 6.04,
       "win": true,
       "score": 60,
       "factors": [
-        "RSI:31*",
+        "SMA+",
+        "GoldenX",
+        "RSI:neutral",
+        "MACD+",
+        "MACD++",
+        "Vol+"
+      ],
+      "rsi": 57.2,
+      "regime": "range",
+      "hold_hours": 2.0,
+      "reason": "PROFIT_TARGET: +6.0%"
+    },
+    {
+      "timestamp": "2026-01-15 19:30:00+00:00",
+      "ticker": "PLUG",
+      "pnl": -0.2259,
+      "pnl_pct": -2.26,
+      "win": false,
+      "score": 55,
+      "factors": [
+        "SMA+",
+        "RSI:neutral",
+        "MACD+",
+        "MACD++",
+        "Vol+",
+        "momentum:strong_up"
+      ],
+      "rsi": 53.5,
+      "regime": "range",
+      "hold_hours": 5.0,
+      "reason": "TIME_EXIT: 20 bars, -2.3%"
+    },
+    {
+      "timestamp": "2026-01-21 15:30:00+00:00",
+      "ticker": "PLUG",
+      "pnl": -0.3462,
+      "pnl_pct": -3.46,
+      "win": false,
+      "score": 50,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "Vol+",
+        "momentum:strong_up"
+      ],
+      "rsi": 48.2,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, -3.5%"
+    },
+    {
+      "timestamp": "2026-01-22 14:30:00+00:00",
+      "ticker": "PLUG",
+      "pnl": 0.8529,
+      "pnl_pct": 8.53,
+      "win": true,
+      "score": 50,
+      "factors": [
+        "RSI:buy_zone",
         "MACD+",
         "MACD++",
         "BB:mid",
-        "+0.6%",
-        "VWAP:buy"
+        "momentum:strong_up"
       ],
-      "rsi": 50,
-      "regime": "normal",
-      "hold_hours": 49.5,
-      "reason": "EOD PROFIT LOCK: +23.1% ($+3.17)"
+      "rsi": 42.7,
+      "regime": "range",
+      "hold_hours": 19.2,
+      "reason": "PROFIT_TARGET: +8.5%"
     },
     {
-      "timestamp": "2026-02-13T20:56:53.409572",
-      "ticker": "AMC",
-      "pnl": -0.3,
-      "pnl_pct": -4.63,
+      "timestamp": "2026-01-26 14:30:00+00:00",
+      "ticker": "PLUG",
+      "pnl": -0.6239,
+      "pnl_pct": -6.24,
+      "win": false,
+      "score": 50,
+      "factors": [
+        "SMA+",
+        "GoldenX",
+        "RSI:buy_zone",
+        "BB:mid",
+        "momentum:strong_up"
+      ],
+      "rsi": 46.4,
+      "regime": "range",
+      "hold_hours": 69.2,
+      "reason": "STOP_LOSS: -6.2%"
+    },
+    {
+      "timestamp": "2026-01-27 19:15:00+00:00",
+      "ticker": "PLUG",
+      "pnl": 0.5762,
+      "pnl_pct": 5.76,
+      "win": true,
+      "score": 56,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "Vol+",
+        "momentum:up"
+      ],
+      "rsi": 30.4,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "PROFIT_TARGET: +5.8%"
+    },
+    {
+      "timestamp": "2026-01-30 15:15:00+00:00",
+      "ticker": "PLUG",
+      "pnl": -0.4244,
+      "pnl_pct": -4.24,
+      "win": false,
+      "score": 50,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "momentum:strong_up"
+      ],
+      "rsi": 50.0,
+      "regime": "range",
+      "hold_hours": 21.0,
+      "reason": "STOP_LOSS: -4.2%"
+    },
+    {
+      "timestamp": "2026-02-02 14:45:00+00:00",
+      "ticker": "PLUG",
+      "pnl": -0.4439,
+      "pnl_pct": -4.44,
       "win": false,
       "score": 60,
       "factors": [
-        "RSI:48*",
+        "RSI:buy_zone",
         "MACD+",
         "MACD++",
         "BB:mid",
-        "+0.5%",
+        "momentum:strong_up",
         "VWAP:buy"
       ],
-      "rsi": 50,
-      "regime": "normal",
-      "hold_hours": 49.7,
-      "reason": "STOP_LOSS"
+      "rsi": 41.4,
+      "regime": "range",
+      "hold_hours": 66.5,
+      "reason": "STOP_LOSS: -4.4%"
+    },
+    {
+      "timestamp": "2026-02-02 20:30:00+00:00",
+      "ticker": "PLUG",
+      "pnl": 0.1295,
+      "pnl_pct": 1.29,
+      "win": true,
+      "score": 53,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:low",
+        "momentum:up",
+        "VWAP:buy"
+      ],
+      "rsi": 40.7,
+      "regime": "range",
+      "hold_hours": 5.0,
+      "reason": "TIME_EXIT: 20 bars, +1.3%"
+    },
+    {
+      "timestamp": "2026-02-03 19:15:00+00:00",
+      "ticker": "PLUG",
+      "pnl": -0.1674,
+      "pnl_pct": -1.67,
+      "win": false,
+      "score": 60,
+      "factors": [
+        "SMA+",
+        "RSI:buy_zone",
+        "MACD+",
+        "BB:low",
+        "Vol+",
+        "VWAP:buy"
+      ],
+      "rsi": 40.2,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, -1.7%"
+    },
+    {
+      "timestamp": "2026-02-04 16:30:00+00:00",
+      "ticker": "PLUG",
+      "pnl": -0.4466,
+      "pnl_pct": -4.47,
+      "win": false,
+      "score": 52,
+      "factors": [
+        "RSI:neutral",
+        "MACD+",
+        "MACD++",
+        "BB:hi!",
+        "Vol+",
+        "momentum:strong_up"
+      ],
+      "rsi": 58.1,
+      "regime": "range",
+      "hold_hours": 19.8,
+      "reason": "STOP_LOSS: -4.5%"
+    },
+    {
+      "timestamp": "2026-02-05 14:45:00+00:00",
+      "ticker": "PLUG",
+      "pnl": -0.5813,
+      "pnl_pct": -5.81,
+      "win": false,
+      "score": 52,
+      "factors": [
+        "SMA+",
+        "RSI:buy_zone",
+        "BB:low",
+        "Vol+",
+        "VWAP:buy"
+      ],
+      "rsi": 35.6,
+      "regime": "range",
+      "hold_hours": 22.0,
+      "reason": "STOP_LOSS: -5.8%"
+    },
+    {
+      "timestamp": "2026-02-06 16:00:00+00:00",
+      "ticker": "PLUG",
+      "pnl": 0.5195,
+      "pnl_pct": 5.19,
+      "win": true,
+      "score": 60,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "momentum:strong_up",
+        "VWAP:buy"
+      ],
+      "rsi": 33.1,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "PROFIT_TARGET: +5.2%"
+    },
+    {
+      "timestamp": "2026-02-09 19:30:00+00:00",
+      "ticker": "PLUG",
+      "pnl": 0.341,
+      "pnl_pct": 3.41,
+      "win": true,
+      "score": 55,
+      "factors": [
+        "SMA+",
+        "RSI:buy_zone",
+        "BB:mid",
+        "Vol+",
+        "VWAP:buy"
+      ],
+      "rsi": 49.9,
+      "regime": "range",
+      "hold_hours": 5.0,
+      "reason": "TIME_EXIT: 20 bars, +3.4%"
+    },
+    {
+      "timestamp": "2026-02-10 19:45:00+00:00",
+      "ticker": "PLUG",
+      "pnl": 0.024,
+      "pnl_pct": 0.24,
+      "win": true,
+      "score": 62,
+      "factors": [
+        "SMA+",
+        "RSI:buy_zone",
+        "BB:low",
+        "Vol+",
+        "momentum:strong_up",
+        "VWAP:buy"
+      ],
+      "rsi": 48.8,
+      "regime": "range",
+      "hold_hours": 5.0,
+      "reason": "TIME_EXIT: 20 bars, +0.2%"
+    },
+    {
+      "timestamp": "2026-02-11 20:45:00+00:00",
+      "ticker": "PLUG",
+      "pnl": -0.2838,
+      "pnl_pct": -2.84,
+      "win": false,
+      "score": 52,
+      "factors": [
+        "RSI:buy_zone",
+        "BB:low",
+        "Vol+",
+        "momentum:strong_up",
+        "VWAP:buy"
+      ],
+      "rsi": 31.6,
+      "regime": "range",
+      "hold_hours": 5.0,
+      "reason": "TIME_EXIT: 20 bars, -2.8%"
+    },
+    {
+      "timestamp": "2026-02-13 16:00:00+00:00",
+      "ticker": "PLUG",
+      "pnl": 0.0893,
+      "pnl_pct": 0.89,
+      "win": true,
+      "score": 56,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "momentum:up",
+        "VWAP:buy"
+      ],
+      "rsi": 31.3,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, +0.9%"
+    },
+    {
+      "timestamp": "2025-11-20 17:00:00+00:00",
+      "ticker": "PTON",
+      "pnl": -0.4566,
+      "pnl_pct": -4.57,
+      "win": false,
+      "score": 60,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "momentum:strong_up",
+        "VWAP:buy"
+      ],
+      "rsi": 41.5,
+      "regime": "range",
+      "hold_hours": 21.2,
+      "reason": "STOP_LOSS: -4.6%"
+    },
+    {
+      "timestamp": "2025-11-21 20:00:00+00:00",
+      "ticker": "PTON",
+      "pnl": 0.1243,
+      "pnl_pct": 1.24,
+      "win": true,
+      "score": 56,
+      "factors": [
+        "RSI:oversold",
+        "MACD+",
+        "MACD++",
+        "BB:low",
+        "Vol+",
+        "momentum:up"
+      ],
+      "rsi": 29.0,
+      "regime": "range",
+      "hold_hours": 5.0,
+      "reason": "TIME_EXIT: 20 bars, +1.2%"
+    },
+    {
+      "timestamp": "2025-11-24 18:45:00+00:00",
+      "ticker": "PTON",
+      "pnl": 0.1232,
+      "pnl_pct": 1.23,
+      "win": true,
+      "score": 53,
+      "factors": [
+        "SMA+",
+        "RSI:buy_zone",
+        "MACD+",
+        "BB:mid",
+        "VWAP:buy"
+      ],
+      "rsi": 37.9,
+      "regime": "range",
+      "hold_hours": 70.5,
+      "reason": "TIME_EXIT: 20 bars, +1.2%"
+    },
+    {
+      "timestamp": "2025-12-01 16:30:00+00:00",
+      "ticker": "PTON",
+      "pnl": -0.0367,
+      "pnl_pct": -0.37,
+      "win": false,
+      "score": 57,
+      "factors": [
+        "SMA+",
+        "GoldenX",
+        "RSI:neutral",
+        "MACD+",
+        "MACD++",
+        "BB:hi!"
+      ],
+      "rsi": 57.0,
+      "regime": "range",
+      "hold_hours": 73.5,
+      "reason": "TIME_EXIT: 20 bars, -0.4%"
+    },
+    {
+      "timestamp": "2025-12-03 18:00:00+00:00",
+      "ticker": "PTON",
+      "pnl": -0.0851,
+      "pnl_pct": -0.85,
+      "win": false,
+      "score": 57,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:low",
+        "Vol+",
+        "VWAP:buy"
+      ],
+      "rsi": 31.7,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, -0.9%"
+    },
+    {
+      "timestamp": "2025-12-04 16:45:00+00:00",
+      "ticker": "PTON",
+      "pnl": 0.1761,
+      "pnl_pct": 1.76,
+      "win": true,
+      "score": 66,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "Vol+",
+        "momentum:up"
+      ],
+      "rsi": 32.6,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, +1.8%"
+    },
+    {
+      "timestamp": "2025-12-05 16:30:00+00:00",
+      "ticker": "PTON",
+      "pnl": -0.0455,
+      "pnl_pct": -0.45,
+      "win": false,
+      "score": 55,
+      "factors": [
+        "SMA+",
+        "RSI:buy_zone",
+        "BB:mid",
+        "momentum:strong_up",
+        "VWAP:buy"
+      ],
+      "rsi": 31.7,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, -0.5%"
+    },
+    {
+      "timestamp": "2025-12-08 15:15:00+00:00",
+      "ticker": "PTON",
+      "pnl": -0.2439,
+      "pnl_pct": -2.44,
+      "win": false,
+      "score": 55,
+      "factors": [
+        "SMA+",
+        "RSI:buy_zone",
+        "BB:mid",
+        "momentum:strong_up",
+        "VWAP:buy"
+      ],
+      "rsi": 47.9,
+      "regime": "range",
+      "hold_hours": 70.5,
+      "reason": "TIME_EXIT: 20 bars, -2.4%"
+    },
+    {
+      "timestamp": "2025-12-09 14:45:00+00:00",
+      "ticker": "PTON",
+      "pnl": 0.1868,
+      "pnl_pct": 1.87,
+      "win": true,
+      "score": 60,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "momentum:strong_up",
+        "VWAP:buy"
+      ],
+      "rsi": 44.2,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, +1.9%"
+    },
+    {
+      "timestamp": "2025-12-11 18:00:00+00:00",
+      "ticker": "PTON",
+      "pnl": 0.1063,
+      "pnl_pct": 1.06,
+      "win": true,
+      "score": 50,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "VWAP:buy"
+      ],
+      "rsi": 50.0,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, +1.1%"
+    },
+    {
+      "timestamp": "2025-12-16 16:00:00+00:00",
+      "ticker": "PTON",
+      "pnl": -0.2353,
+      "pnl_pct": -2.35,
+      "win": false,
+      "score": 60,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "Vol+",
+        "VWAP:buy"
+      ],
+      "rsi": 32.2,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, -2.4%"
+    },
+    {
+      "timestamp": "2025-12-17 15:15:00+00:00",
+      "ticker": "PTON",
+      "pnl": 0.004,
+      "pnl_pct": 0.04,
+      "win": true,
+      "score": 56,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "momentum:up",
+        "VWAP:buy"
+      ],
+      "rsi": 38.1,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, +0.0%"
+    },
+    {
+      "timestamp": "2025-12-18 14:30:00+00:00",
+      "ticker": "PTON",
+      "pnl": -0.0717,
+      "pnl_pct": -0.72,
+      "win": false,
+      "score": 52,
+      "factors": [
+        "SMA+",
+        "RSI:neutral",
+        "MACD+",
+        "MACD++",
+        "BB:hi!",
+        "momentum:strong_up"
+      ],
+      "rsi": 60.6,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, -0.7%"
+    },
+    {
+      "timestamp": "2025-12-19 18:30:00+00:00",
+      "ticker": "PTON",
+      "pnl": -0.0557,
+      "pnl_pct": -0.56,
+      "win": false,
+      "score": 51,
+      "factors": [
+        "SMA+",
+        "RSI:buy_zone",
+        "BB:mid",
+        "momentum:up",
+        "VWAP:buy"
+      ],
+      "rsi": 46.0,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, -0.6%"
+    },
+    {
+      "timestamp": "2025-12-22 19:30:00+00:00",
+      "ticker": "PTON",
+      "pnl": -0.0648,
+      "pnl_pct": -0.65,
+      "win": false,
+      "score": 52,
+      "factors": [
+        "RSI:neutral",
+        "MACD+",
+        "MACD++",
+        "BB:hi!",
+        "Vol+",
+        "momentum:strong_up"
+      ],
+      "rsi": 57.3,
+      "regime": "range",
+      "hold_hours": 5.0,
+      "reason": "TIME_EXIT: 20 bars, -0.6%"
+    },
+    {
+      "timestamp": "2025-12-24 15:45:00+00:00",
+      "ticker": "PTON",
+      "pnl": -0.1211,
+      "pnl_pct": -1.21,
+      "win": false,
+      "score": 60,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "momentum:strong_up",
+        "VWAP:buy"
+      ],
+      "rsi": 43.6,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, -1.2%"
+    },
+    {
+      "timestamp": "2025-12-26 17:30:00+00:00",
+      "ticker": "PTON",
+      "pnl": 0.0984,
+      "pnl_pct": 0.98,
+      "win": true,
+      "score": 50,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "VWAP:buy"
+      ],
+      "rsi": 47.0,
+      "regime": "range",
+      "hold_hours": 49.5,
+      "reason": "TIME_EXIT: 20 bars, +1.0%"
+    },
+    {
+      "timestamp": "2025-12-29 20:30:00+00:00",
+      "ticker": "PTON",
+      "pnl": 0.0926,
+      "pnl_pct": 0.93,
+      "win": true,
+      "score": 70,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "Vol+",
+        "momentum:strong_up"
+      ],
+      "rsi": 49.0,
+      "regime": "range",
+      "hold_hours": 5.0,
+      "reason": "TIME_EXIT: 20 bars, +0.9%"
+    },
+    {
+      "timestamp": "2025-12-30 20:15:00+00:00",
+      "ticker": "PTON",
+      "pnl": 0.0631,
+      "pnl_pct": 0.63,
+      "win": true,
+      "score": 55,
+      "factors": [
+        "SMA+",
+        "RSI:neutral",
+        "MACD+",
+        "MACD++",
+        "momentum:strong_up",
+        "VWAP:buy"
+      ],
+      "rsi": 62.0,
+      "regime": "range",
+      "hold_hours": 5.0,
+      "reason": "TIME_EXIT: 20 bars, +0.6%"
+    },
+    {
+      "timestamp": "2025-12-31 19:15:00+00:00",
+      "ticker": "PTON",
+      "pnl": 0.0288,
+      "pnl_pct": 0.29,
+      "win": true,
+      "score": 52,
+      "factors": [
+        "SMA+",
+        "RSI:buy_zone",
+        "BB:low",
+        "Vol+",
+        "VWAP:buy"
+      ],
+      "rsi": 47.3,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, +0.3%"
+    },
+    {
+      "timestamp": "2026-01-02 15:15:00+00:00",
+      "ticker": "PTON",
+      "pnl": -0.4447,
+      "pnl_pct": -4.45,
+      "win": false,
+      "score": 50,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "VWAP:buy"
+      ],
+      "rsi": 40.0,
+      "regime": "range",
+      "hold_hours": 43.8,
+      "reason": "STOP_LOSS: -4.4%"
+    },
+    {
+      "timestamp": "2026-01-05 16:15:00+00:00",
+      "ticker": "PTON",
+      "pnl": 0.2885,
+      "pnl_pct": 2.89,
+      "win": true,
+      "score": 56,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "momentum:up",
+        "VWAP:buy"
+      ],
+      "rsi": 37.7,
+      "regime": "range",
+      "hold_hours": 70.5,
+      "reason": "TIME_EXIT: 20 bars, +2.9%"
+    },
+    {
+      "timestamp": "2026-01-06 15:15:00+00:00",
+      "ticker": "PTON",
+      "pnl": 0.6065,
+      "pnl_pct": 6.07,
+      "win": true,
+      "score": 50,
+      "factors": [
+        "SMA+",
+        "RSI:neutral",
+        "BB:mid",
+        "Vol+",
+        "VWAP:buy"
+      ],
+      "rsi": 57.6,
+      "regime": "range",
+      "hold_hours": 19.8,
+      "reason": "PROFIT_TARGET: +6.1%"
+    },
+    {
+      "timestamp": "2026-01-12 15:15:00+00:00",
+      "ticker": "PTON",
+      "pnl": -0.4668,
+      "pnl_pct": -4.67,
+      "win": false,
+      "score": 55,
+      "factors": [
+        "SMA+",
+        "RSI:buy_zone",
+        "BB:mid",
+        "Vol+",
+        "momentum:strong_up"
+      ],
+      "rsi": 47.0,
+      "regime": "range",
+      "hold_hours": 66.5,
+      "reason": "STOP_LOSS: -4.7%"
+    },
+    {
+      "timestamp": "2026-01-15 17:15:00+00:00",
+      "ticker": "PTON",
+      "pnl": 0.3643,
+      "pnl_pct": 3.64,
+      "win": true,
+      "score": 50,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "VWAP:buy"
+      ],
+      "rsi": 42.9,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, +3.6%"
+    },
+    {
+      "timestamp": "2026-01-20 17:15:00+00:00",
+      "ticker": "PTON",
+      "pnl": -0.4085,
+      "pnl_pct": -4.08,
+      "win": false,
+      "score": 55,
+      "factors": [
+        "RSI:buy_zone",
+        "BB:mid",
+        "Vol+",
+        "momentum:strong_up",
+        "VWAP:buy"
+      ],
+      "rsi": 32.9,
+      "regime": "range",
+      "hold_hours": 92.8,
+      "reason": "STOP_LOSS: -4.1%"
+    },
+    {
+      "timestamp": "2026-01-21 20:00:00+00:00",
+      "ticker": "PTON",
+      "pnl": -0.034,
+      "pnl_pct": -0.34,
+      "win": false,
+      "score": 50,
+      "factors": [
+        "RSI:oversold",
+        "MACD+",
+        "MACD++",
+        "BB:low",
+        "momentum:strong_up",
+        "VWAP:buy"
+      ],
+      "rsi": 22.4,
+      "regime": "range",
+      "hold_hours": 5.0,
+      "reason": "TIME_EXIT: 20 bars, -0.3%"
+    },
+    {
+      "timestamp": "2026-01-22 19:15:00+00:00",
+      "ticker": "PTON",
+      "pnl": -0.0765,
+      "pnl_pct": -0.77,
+      "win": false,
+      "score": 51,
+      "factors": [
+        "RSI:neutral",
+        "MACD+",
+        "MACD++",
+        "Vol+",
+        "momentum:up",
+        "VWAP:buy"
+      ],
+      "rsi": 60.8,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, -0.8%"
+    },
+    {
+      "timestamp": "2026-01-26 15:00:00+00:00",
+      "ticker": "PTON",
+      "pnl": 0.0953,
+      "pnl_pct": 0.95,
+      "win": true,
+      "score": 55,
+      "factors": [
+        "RSI:buy_zone",
+        "BB:mid",
+        "Vol+",
+        "momentum:strong_up",
+        "VWAP:buy"
+      ],
+      "rsi": 42.5,
+      "regime": "range",
+      "hold_hours": 70.5,
+      "reason": "TIME_EXIT: 20 bars, +1.0%"
+    },
+    {
+      "timestamp": "2026-01-26 20:15:00+00:00",
+      "ticker": "PTON",
+      "pnl": 0.1789,
+      "pnl_pct": 1.79,
+      "win": true,
+      "score": 52,
+      "factors": [
+        "SMA+",
+        "MACD+",
+        "MACD++",
+        "BB:hi!",
+        "Vol+",
+        "momentum:strong_up"
+      ],
+      "rsi": 66.7,
+      "regime": "range",
+      "hold_hours": 5.0,
+      "reason": "TIME_EXIT: 20 bars, +1.8%"
+    },
+    {
+      "timestamp": "2026-01-28 17:45:00+00:00",
+      "ticker": "PTON",
+      "pnl": -0.0767,
+      "pnl_pct": -0.77,
+      "win": false,
+      "score": 55,
+      "factors": [
+        "RSI:neutral",
+        "MACD+",
+        "MACD++",
+        "Vol+",
+        "momentum:strong_up",
+        "VWAP:buy"
+      ],
+      "rsi": 56.2,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, -0.8%"
+    },
+    {
+      "timestamp": "2026-01-29 16:15:00+00:00",
+      "ticker": "PTON",
+      "pnl": -0.4177,
+      "pnl_pct": -4.18,
+      "win": false,
+      "score": 55,
+      "factors": [
+        "RSI:buy_zone",
+        "BB:mid",
+        "Vol+",
+        "momentum:strong_up",
+        "VWAP:buy"
+      ],
+      "rsi": 43.4,
+      "regime": "range",
+      "hold_hours": 22.0,
+      "reason": "STOP_LOSS: -4.2%"
+    },
+    {
+      "timestamp": "2026-01-30 17:00:00+00:00",
+      "ticker": "PTON",
+      "pnl": -0.2032,
+      "pnl_pct": -2.03,
+      "win": false,
+      "score": 50,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "VWAP:buy"
+      ],
+      "rsi": 36.1,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, -2.0%"
+    },
+    {
+      "timestamp": "2026-02-02 15:00:00+00:00",
+      "ticker": "PTON",
+      "pnl": 0.5523,
+      "pnl_pct": 5.52,
+      "win": true,
+      "score": 60,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "Vol+",
+        "VWAP:buy"
+      ],
+      "rsi": 36.4,
+      "regime": "range",
+      "hold_hours": 67.5,
+      "reason": "PROFIT_TARGET: +5.5%"
+    },
+    {
+      "timestamp": "2026-02-03 17:30:00+00:00",
+      "ticker": "PTON",
+      "pnl": -0.0952,
+      "pnl_pct": -0.95,
+      "win": false,
+      "score": 51,
+      "factors": [
+        "SMA+",
+        "RSI:buy_zone",
+        "BB:mid",
+        "momentum:up",
+        "VWAP:buy"
+      ],
+      "rsi": 44.2,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, -1.0%"
+    },
+    {
+      "timestamp": "2026-02-04 16:15:00+00:00",
+      "ticker": "PTON",
+      "pnl": 0.0697,
+      "pnl_pct": 0.7,
+      "win": true,
+      "score": 51,
+      "factors": [
+        "SMA+",
+        "RSI:buy_zone",
+        "BB:mid",
+        "momentum:up",
+        "VWAP:buy"
+      ],
+      "rsi": 47.4,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, +0.7%"
+    },
+    {
+      "timestamp": "2026-02-05 14:30:00+00:00",
+      "ticker": "PTON",
+      "pnl": -2.229,
+      "pnl_pct": -22.29,
+      "win": false,
+      "score": 54,
+      "factors": [
+        "SMA+",
+        "RSI:neutral",
+        "MACD+",
+        "BB:mid",
+        "momentum:up",
+        "VWAP:buy"
+      ],
+      "rsi": 60.8,
+      "regime": "range",
+      "hold_hours": 21.8,
+      "reason": "STOP_LOSS: -22.3%"
+    },
+    {
+      "timestamp": "2026-02-05 20:30:00+00:00",
+      "ticker": "PTON",
+      "pnl": -0.5701,
+      "pnl_pct": -5.7,
+      "win": false,
+      "score": 60,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "momentum:strong_up",
+        "VWAP:buy"
+      ],
+      "rsi": 41.7,
+      "regime": "volatile",
+      "hold_hours": 1.8,
+      "reason": "STOP_LOSS: -5.7%"
+    },
+    {
+      "timestamp": "2026-02-06 16:00:00+00:00",
+      "ticker": "PTON",
+      "pnl": 0.5581,
+      "pnl_pct": 5.58,
+      "win": true,
+      "score": 70,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "Vol+",
+        "momentum:strong_up"
+      ],
+      "rsi": 43.3,
+      "regime": "range",
+      "hold_hours": 19.2,
+      "reason": "PROFIT_TARGET: +5.6%"
+    },
+    {
+      "timestamp": "2026-02-09 16:30:00+00:00",
+      "ticker": "PTON",
+      "pnl": 0.0784,
+      "pnl_pct": 0.78,
+      "win": true,
+      "score": 53,
+      "factors": [
+        "SMA+",
+        "RSI:buy_zone",
+        "MACD+",
+        "BB:mid",
+        "VWAP:buy"
+      ],
+      "rsi": 48.7,
+      "regime": "range",
+      "hold_hours": 70.5,
+      "reason": "TIME_EXIT: 20 bars, +0.8%"
+    },
+    {
+      "timestamp": "2026-02-10 15:15:00+00:00",
+      "ticker": "PTON",
+      "pnl": 0.011,
+      "pnl_pct": 0.11,
+      "win": true,
+      "score": 60,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "momentum:strong_up",
+        "VWAP:buy"
+      ],
+      "rsi": 46.6,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, +0.1%"
+    },
+    {
+      "timestamp": "2026-02-10 20:30:00+00:00",
+      "ticker": "PTON",
+      "pnl": -0.2544,
+      "pnl_pct": -2.54,
+      "win": false,
+      "score": 50,
+      "factors": [
+        "RSI:buy_zone",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "VWAP:buy"
+      ],
+      "rsi": 44.7,
+      "regime": "range",
+      "hold_hours": 5.0,
+      "reason": "TIME_EXIT: 20 bars, -2.5%"
+    },
+    {
+      "timestamp": "2026-02-12 14:45:00+00:00",
+      "ticker": "PTON",
+      "pnl": -0.1421,
+      "pnl_pct": -1.42,
+      "win": false,
+      "score": 55,
+      "factors": [
+        "RSI:buy_zone",
+        "BB:mid",
+        "Vol+",
+        "momentum:strong_up",
+        "VWAP:buy"
+      ],
+      "rsi": 36.6,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, -1.4%"
+    },
+    {
+      "timestamp": "2026-02-12 20:00:00+00:00",
+      "ticker": "PTON",
+      "pnl": -0.0466,
+      "pnl_pct": -0.47,
+      "win": false,
+      "score": 55,
+      "factors": [
+        "SMA+",
+        "RSI:buy_zone",
+        "BB:mid",
+        "momentum:strong_up",
+        "VWAP:buy"
+      ],
+      "rsi": 50.0,
+      "regime": "range",
+      "hold_hours": 5.0,
+      "reason": "TIME_EXIT: 20 bars, -0.5%"
+    },
+    {
+      "timestamp": "2026-02-13 19:15:00+00:00",
+      "ticker": "PTON",
+      "pnl": 0.0236,
+      "pnl_pct": 0.24,
+      "win": true,
+      "score": 55,
+      "factors": [
+        "RSI:buy_zone",
+        "BB:mid",
+        "Vol+",
+        "momentum:strong_up",
+        "VWAP:buy"
+      ],
+      "rsi": 47.7,
+      "regime": "range",
+      "hold_hours": 22.5,
+      "reason": "TIME_EXIT: 20 bars, +0.2%"
     }
   ]
 }
