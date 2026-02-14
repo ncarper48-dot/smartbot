@@ -466,10 +466,12 @@ def end_of_day_close(dry_run: bool = False) -> dict:
 def check_intraday_profits(risk_mgr: AdvancedRiskManager,
                           quick_profit_pct: float = 5.0,
                           big_profit_pct: float = 15.0) -> list:
-    """Check positions for intraday profit targets.
+    """Check positions for intraday profit targets + trailing stop protection.
     
-    - Quick profit (>=5%): Sell half to lock in gains, let rest ride
     - Big profit (>=15%): Sell all — don't be greedy
+    - Quick profit (>=5%): Sell half to lock in gains, let rest ride
+    - Trailing stop: If was up >3% but now falling back, sell to protect gains
+    - Deep loss (< -8%): Cut losses, brain says stop bleeding
     """
     exits = []
     positions = risk_mgr.get_open_positions()
@@ -479,10 +481,24 @@ def check_intraday_profits(risk_mgr: AdvancedRiskManager,
             entry_price = pos.get("entry_price", 0)
             current_price = pos.get("current_price", entry_price)
             qty = pos.get("quantity", 0)
+            atr = pos.get("atr", entry_price * 0.02)
             if entry_price <= 0 or qty <= 0:
                 continue
             
             pnl_pct = (current_price - entry_price) / entry_price * 100
+            
+            # Track highest price seen (trailing stop reference)
+            high_price = pos.get("high_price", current_price)
+            if current_price > high_price:
+                high_price = current_price
+                # Update stored high
+                try:
+                    all_pos = risk_mgr.load_positions()
+                    if ticker in all_pos:
+                        all_pos[ticker]["high_price"] = high_price
+                        risk_mgr.save_positions(all_pos)
+                except Exception:
+                    pass
             
             if pnl_pct >= big_profit_pct:
                 # BIG WIN — sell everything, don't be greedy
@@ -503,6 +519,25 @@ def check_intraday_profits(risk_mgr: AdvancedRiskManager,
                     "price": current_price,
                 })
                 print(f"   💰 QUICK PROFIT: {ticker} {pnl_pct:+.1f}% — sell half")
+            elif high_price > entry_price * 1.03 and current_price < high_price - (atr * 1.5):
+                # TRAILING STOP: Was up >3% but dropped 1.5 ATR from peak
+                drop_from_high = (high_price - current_price) / high_price * 100
+                exits.append({
+                    "ticker": ticker,
+                    "action": "SELL",
+                    "reason": f"TRAILING STOP: peaked at +{((high_price-entry_price)/entry_price*100):.1f}%, dropped {drop_from_high:.1f}% from high",
+                    "price": current_price,
+                })
+                print(f"   🛡️ TRAILING STOP: {ticker} dropped {drop_from_high:.1f}% from peak — protecting gains")
+            elif pnl_pct <= -8.0:
+                # DEEP LOSS — cut it, stop bleeding
+                exits.append({
+                    "ticker": ticker,
+                    "action": "SELL",
+                    "reason": f"DEEP LOSS CUT: {pnl_pct:+.1f}% — brain says stop bleeding",
+                    "price": current_price,
+                })
+                print(f"   ✂️ LOSS CUT: {ticker} {pnl_pct:+.1f}% — cutting losses")
         except Exception as e:
             print(f"   ⚠️ Profit check error {ticker}: {e}")
     
@@ -510,10 +545,101 @@ def check_intraday_profits(risk_mgr: AdvancedRiskManager,
 
 
 # ---------------------------------------------------------------------------
+#  AUTO-CANCEL STALE ORDERS — Never let capital get stuck again
+# ---------------------------------------------------------------------------
+def cancel_stale_orders():
+    """Cancel any pending orders that are blocking capital."""
+    import requests, base64
+    from dotenv import load_dotenv
+    load_dotenv()
+    try:
+        key = os.getenv('TRADING212_API_KEY', '')
+        secret = os.getenv('TRADING212_API_SECRET', '')
+        base_url = os.getenv('TRADING212_BASE_URL', '')
+        cred = base64.b64encode(f'{key}:{secret}'.encode()).decode()
+        headers = {'Authorization': f'Basic {cred}', 'Content-Type': 'application/json'}
+        r = requests.get(f'{base_url}/equity/orders', headers=headers, timeout=10)
+        orders = r.json()
+        if not isinstance(orders, list) or len(orders) == 0:
+            return 0
+        cancelled = 0
+        for o in orders:
+            oid = o.get('id', '')
+            status = o.get('status', '')
+            if oid and status in ('NEW', 'PENDING', ''):
+                try:
+                    requests.delete(f'{base_url}/equity/orders/{oid}', headers=headers, timeout=10)
+                    print(f"   🗑️ Cancelled stale order: {o.get('ticker','?')} qty={o.get('quantity',0)}")
+                    cancelled += 1
+                except Exception:
+                    pass
+        if cancelled:
+            print(f"   ✅ Freed capital from {cancelled} stale order(s)")
+            time.sleep(1)  # Let API settle
+        return cancelled
+    except Exception as e:
+        print(f"   ⚠️ Order cleanup: {e}")
+        return 0
+
+
+# ---------------------------------------------------------------------------
+#  BRAIN TICKER FILTER — Don't waste capital on proven losers
+# ---------------------------------------------------------------------------
+def brain_filter_tickers(tickers_212: list, brain: 'SmartBotBrain') -> list:
+    """Remove tickers that the brain has learned are consistent losers.
+    
+    Rules:
+    - Win rate < 28% with 10+ trades → BLOCKED (proven loser)
+    - Win rate < 35% with 20+ trades → BLOCKED (confirmed bad)
+    - Active lose streak ≥ 5 → BLOCKED temporarily
+    - Win rate > 55% → PRIORITY (move to front)
+    """
+    filtered = []
+    blocked = []
+    boosted = []
+    
+    for t212 in tickers_212:
+        ticker = t212.replace('_US_EQ', '').replace('_UK_EQ', '').replace('_DE_EQ', '')
+        tm = brain.brain.get('ticker_memory', {}).get(ticker, {})
+        trades = tm.get('total_trades', 0)
+        wins = tm.get('wins', 0)
+        wr = wins / trades if trades > 0 else 0.5
+        lose_streak = tm.get('lose_streak', 0)
+        avg_pnl = tm.get('avg_pnl', 0)
+        
+        # Block proven losers
+        if trades >= 20 and wr < 0.35 and avg_pnl < -0.05:
+            blocked.append(f"{ticker}({wr:.0%}/{trades}T)")
+            continue
+        if trades >= 10 and wr < 0.28:
+            blocked.append(f"{ticker}({wr:.0%}/{trades}T)")
+            continue
+        if lose_streak >= 5 and trades >= 5:
+            blocked.append(f"{ticker}(streak:{lose_streak})")
+            continue
+        
+        # Boost proven winners to front
+        if trades >= 10 and wr > 0.55 and avg_pnl > 0:
+            boosted.append(t212)
+        else:
+            filtered.append(t212)
+    
+    # Boosted tickers go first
+    result = boosted + filtered
+    
+    if blocked:
+        print(f"   🧠 Brain BLOCKED {len(blocked)} losers: {', '.join(blocked)}")
+    if boosted:
+        print(f"   🧠 Brain PRIORITY: {', '.join(t.replace('_US_EQ','') for t in boosted)}")
+    
+    return result
+
+
+# ---------------------------------------------------------------------------
 #  MAIN EXECUTION ENGINE
 # ---------------------------------------------------------------------------
 def execute_live_trading(tickers_212: list, dry_run: bool = False) -> dict:
-    """Execute live trading with all V3 power upgrades."""
+    """Execute live trading with all V4 power upgrades."""
     global _data_cache
     _data_cache = {}  # Fresh cache each cycle
 
@@ -521,10 +647,14 @@ def execute_live_trading(tickers_212: list, dry_run: bool = False) -> dict:
         "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         "ml_signal": "",
         "confidence": "",
-        "model_status": "V3-Scoring"
+        "model_status": "V4-BrainArmed"
     }
     results = {}
-    notify_bot_status("RUNNING", f"SmartBot V3 at {datetime.now().strftime('%H:%M:%S')}")
+    notify_bot_status("RUNNING", f"SmartBot V4 at {datetime.now().strftime('%H:%M:%S')}")
+
+    # --- PHASE -1: Cancel any stale orders blocking capital ---
+    print("\n🗑️ Checking for stale orders...")
+    cancel_stale_orders()
 
     risk_mgr = AdvancedRiskManager()
     brain = SmartBotBrain()  # Self-learning intelligence
@@ -633,9 +763,11 @@ def execute_live_trading(tickers_212: list, dry_run: bool = False) -> dict:
     kelly_f = kelly_fraction(hist_stats["win_rate"], hist_stats["avg_win"], hist_stats["avg_loss"])
     print(f"📐 Kelly: {kelly_f*100:.1f}% (WR={hist_stats['win_rate']:.0%})")
 
-    # --- PHASE 3: Relative Strength Ranking + Overnight Edge ---
-    print(f"\n📈 Ranking {len(tickers_212)} tickers by relative strength...")
-    tickers_ranked = rank_tickers_by_strength(tickers_212, max_tickers=10)
+    # --- PHASE 3: Brain Filter + Relative Strength Ranking + Overnight Edge ---
+    print(f"\n🧠 Brain filtering {len(tickers_212)} tickers...")
+    tickers_brain_filtered = brain_filter_tickers(tickers_212, brain)
+    print(f"\n📈 Ranking {len(tickers_brain_filtered)} tickers by relative strength...")
+    tickers_ranked = rank_tickers_by_strength(tickers_brain_filtered, max_tickers=10)
 
     overnight_wl = load_overnight_watchlist()
     if overnight_wl:
@@ -847,6 +979,21 @@ def execute_live_trading(tickers_212: list, dry_run: bool = False) -> dict:
                       f"WR:{brain_intel['ticker_winrate']:.0%} "
                       f"avg:${brain_intel['ticker_avg_pnl']:+.3f}")
 
+        # === BRAIN-ADAPTIVE ENTRY THRESHOLD ===
+        # Penalized tickers need HIGHER confidence to enter
+        # Boosted tickers get a lower threshold
+        ap = brain.brain.get('adaptive_params', {})
+        ticker_penalty = ap.get('confidence_penalty_tickers', {}).get(ticker_yf, None)
+        ticker_boost = ap.get('confidence_boost_tickers', {}).get(ticker_yf, None)
+        if ticker_penalty and action == 'buy':
+            # Require 20% more confidence for brain-penalized tickers
+            confidence *= 0.85
+            print(f"   🧠 Brain penalty gate: conf → {confidence:.2f}")
+        elif ticker_boost and action == 'buy':
+            # Slight extra boost for proven winners
+            confidence = min(1.0, confidence * 1.05)
+            print(f"   🧠 Brain boost gate: conf → {confidence:.2f}")
+
         # Dashboard ML status
         if ml_model and action in ("buy", "sell") and not ml_status["ml_signal"]:
             try:
@@ -1009,7 +1156,7 @@ if __name__ == "__main__":
     tickers = args.tickers or [t.strip() for t in os.getenv("TRADING212_DAILY_TICKERS", "AAPL_US_EQ,MSFT_US_EQ").split(",")]
 
     print("=" * 60)
-    print(f"🤖 SMARTBOT V3 — {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    print(f"🤖 SMARTBOT V4 ARMED — {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     print("=" * 60)
     print(f"Mode: {'DRY RUN' if args.dry_run else 'LIVE'}")
     print(f"Tickers: {len(tickers)}")

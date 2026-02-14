@@ -45,7 +45,7 @@ def save_performance(data: Dict):
 
 def log_trade(ticker: str, action: str, quantity: int, price: float, 
               confidence: float = 0.5, reason: str = "", metadata: Dict = None):
-    """Log a trade execution."""
+    """Log a trade execution with real P&L tracking."""
     perf = load_performance()
     
     trade = {
@@ -56,14 +56,32 @@ def log_trade(ticker: str, action: str, quantity: int, price: float,
         "price": price,
         "cost": quantity * price,
         "confidence": confidence,
-        "reason": reason
+        "reason": reason,
+        "pnl": 0.0,
     }
 
     if metadata:
         trade["meta"] = metadata
+        # If metadata has explicit pnl, use it
+        if "pnl" in metadata:
+            trade["pnl"] = float(metadata["pnl"])
+    
+    # Calculate real P&L on sells by matching against buy history
+    if action in ("sell", "sell_partial") and trade["pnl"] == 0.0:
+        # Find average buy price for this ticker
+        buy_trades = [t for t in perf["trades"] 
+                      if t["ticker"] == ticker and t["action"] == "buy"]
+        if buy_trades:
+            total_buy_cost = sum(t["cost"] for t in buy_trades)
+            total_buy_qty = sum(t["quantity"] for t in buy_trades)
+            if total_buy_qty > 0:
+                avg_buy_price = total_buy_cost / total_buy_qty
+                trade["pnl"] = round((price - avg_buy_price) * quantity, 4)
+                trade["avg_buy_price"] = round(avg_buy_price, 4)
     
     perf["trades"].append(trade)
     perf["total_trades"] += 1
+    perf["total_pnl"] = round(perf.get("total_pnl", 0) + trade["pnl"], 4)
     
     # Update ticker stats
     if ticker not in perf["ticker_stats"]:
@@ -71,17 +89,46 @@ def log_trade(ticker: str, action: str, quantity: int, price: float,
             "trades": 0,
             "buys": 0,
             "sells": 0,
-            "total_cost": 0
+            "total_cost": 0,
+            "total_pnl": 0,
+            "wins": 0,
+            "losses": 0
         }
     
-    perf["ticker_stats"][ticker]["trades"] += 1
+    ts = perf["ticker_stats"][ticker]
+    ts["trades"] += 1
     if action == "buy":
-        perf["ticker_stats"][ticker]["buys"] += 1
-        perf["ticker_stats"][ticker]["total_cost"] += quantity * price
-    elif action == "sell":
-        perf["ticker_stats"][ticker]["sells"] += 1
+        ts["buys"] += 1
+        ts["total_cost"] += quantity * price
+    elif action in ("sell", "sell_partial"):
+        ts["sells"] += 1
+        ts["total_pnl"] = ts.get("total_pnl", 0) + trade["pnl"]
+        if trade["pnl"] > 0:
+            ts["wins"] = ts.get("wins", 0) + 1
+        elif trade["pnl"] < 0:
+            ts["losses"] = ts.get("losses", 0) + 1
+    
+    # Update daily summary
+    today = datetime.now().strftime('%Y-%m-%d')
+    if today not in perf.get("daily_summary", {}):
+        perf.setdefault("daily_summary", {})[today] = {
+            "trades": 0, "buys": 0, "sells": 0, "pnl": 0.0
+        }
+    ds = perf["daily_summary"][today]
+    ds["trades"] += 1
+    if action == "buy":
+        ds["buys"] += 1
+    elif action in ("sell", "sell_partial"):
+        ds["sells"] += 1
+        ds["pnl"] = round(ds.get("pnl", 0) + trade["pnl"], 4)
     
     save_performance(perf)
+    
+    # Log P&L for visibility
+    if trade["pnl"] != 0:
+        emoji = "💰" if trade["pnl"] > 0 else "💸"
+        print(f"   {emoji} P&L: ${trade['pnl']:+.2f} on {ticker} {action}")
+    
     return trade
 
 

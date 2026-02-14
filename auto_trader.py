@@ -245,8 +245,8 @@ def main():
                         last_report_close = today
             except Exception:
                 pass
-            else:
-                time.sleep(30)  # Check every 30 seconds
+
+            time.sleep(30)  # Check every 30 seconds
                 
     except KeyboardInterrupt:
         logger.info("🛑 AUTONOMOUS TRADER STOPPED")
