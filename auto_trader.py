@@ -83,6 +83,37 @@ def run_overnight_analysis():
         logger.error(f"❌ Overnight analysis error: {e}")
 
 
+def run_eod_close():
+    """End-of-day profit taking — lock in gains before market close."""
+    logger.info("🔔 END-OF-DAY PROFIT TAKING — Locking in gains before close")
+    try:
+        env = os.environ.copy()
+        env.setdefault("SMARTBOT_DISABLE_TF", "1")
+        env["VIRTUAL_ENV"] = "/home/tradebot/.venv"
+        env["PATH"] = f"/home/tradebot/.venv/bin:{env.get('PATH', '')}"
+        venv_site = "/home/tradebot/.venv/lib/python3.11/site-packages"
+        env["PYTHONPATH"] = f"{venv_site}:{env.get('PYTHONPATH', '')}"  
+        result = subprocess.run(
+            [sys.executable, '-c',
+             'from live_trader import end_of_day_close; end_of_day_close(dry_run=False)'],
+            capture_output=True,
+            text=True,
+            timeout=120,
+            env=env,
+            cwd='/home/tradebot'
+        )
+        if result.returncode == 0:
+            logger.info("✅ EOD profit taking complete")
+            if result.stdout:
+                logger.info(result.stdout)
+        else:
+            logger.error(f"❌ EOD close failed: {result.stderr[:300]}")
+    except subprocess.TimeoutExpired:
+        logger.error("❌ EOD close timed out")
+    except Exception as e:
+        logger.error(f"❌ EOD close error: {e}")
+
+
 def run_strategy():
     """Execute the daily trading strategy."""
     logger.info("🤖 AUTONOMOUS TRADER EXECUTING...")
@@ -143,6 +174,7 @@ def main():
     last_report_close = None
     last_overnight_close = None  # Track post-close analysis
     last_overnight_preopen = None  # Track pre-open analysis
+    last_eod_close = None  # Track EOD profit taking
     
     try:
         while True:
@@ -156,6 +188,13 @@ def main():
             now_et = datetime.now(et_tz)
             time_et = now_et.time()
             today = now_et.strftime('%Y-%m-%d')
+            
+            # === END-OF-DAY PROFIT TAKING: 3:45 PM ET (8:45 PM UK) ===
+            if time_et.hour == 15 and 45 <= time_et.minute <= 55:
+                if last_eod_close != today:
+                    logger.info(f"🔔 EOD PROFIT TAKING ({_uk_now}) — Locking in gains before close")
+                    run_eod_close()
+                    last_eod_close = today
             
             if market_open:
                 # === MARKET HOURS: Trade every 2 min ===

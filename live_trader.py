@@ -23,6 +23,7 @@ from demo_pipeline import compute_indicators
 from performance_tracker import log_trade
 from advanced_risk import AdvancedRiskManager
 from notify import notify_trade, notify_bot_status
+from smartbot_brain import SmartBotBrain
 import sys
 sys.path.append('ml')
 from ml.predict_signal import predict_signal, load_model
@@ -210,9 +211,9 @@ def compute_momentum_score(df: pd.DataFrame) -> dict:
     score = max(0, min(100, score))
 
     # Action + confidence from score
-    if score >= 55:
+    if score >= 50:
         action = "buy"
-        confidence = 0.50 + (score - 55) / 90
+        confidence = 0.50 + (score - 50) / 100
     elif score <= 15 and rsi > 75:
         action = "sell"
         confidence = 0.70
@@ -283,11 +284,11 @@ def rank_tickers_by_strength(tickers_212: list, max_tickers: int = 8) -> list:
 def kelly_fraction(win_rate: float = 0.55, avg_win: float = 0.015, avg_loss: float = 0.01) -> float:
     """Compute half-Kelly fraction for position sizing."""
     if avg_loss == 0 or avg_win == 0:
-        return 0.10
+        return 0.15
     b = avg_win / avg_loss
     f = (win_rate * b - (1 - win_rate)) / b
-    f = max(0.02, min(0.30, f))
-    return f / 2
+    f = max(0.05, min(0.45, f))
+    return f / 2  # Half-Kelly for safety
 
 
 def get_historical_stats() -> dict:
@@ -348,6 +349,167 @@ def check_stale_positions(risk_mgr: AdvancedRiskManager, max_hours: float = 6.0,
 
 
 # ---------------------------------------------------------------------------
+#  END-OF-DAY PROFIT TAKING — Lock in gains before market close
+# ---------------------------------------------------------------------------
+def end_of_day_close(dry_run: bool = False) -> dict:
+    """Close profitable positions before market close to lock in gains.
+    
+    Strategy:
+    - Sell ALL positions in profit (lock in gains over weekend/overnight)
+    - Sell positions with tiny losses < -1% (not worth holding)
+    - Keep positions with larger losses (give them Monday to recover)
+    - Log everything for tracking
+    """
+    import requests, base64
+    from dotenv import load_dotenv
+    load_dotenv()
+    
+    print("\n" + "=" * 60)
+    print("🔔 END-OF-DAY PROFIT TAKING — Locking in gains before close")
+    print("=" * 60)
+    
+    results = {}
+    risk_mgr = AdvancedRiskManager()
+    
+    # Get REAL positions from Trading212 API (not local state)
+    key = os.getenv('TRADING212_API_KEY')
+    secret = os.getenv('TRADING212_API_SECRET')
+    base_url = os.getenv('TRADING212_BASE_URL')
+    auth = base64.b64encode(f'{key}:{secret}'.encode()).decode()
+    headers = {'Authorization': f'Basic {auth}', 'Content-Type': 'application/json'}
+    
+    try:
+        r = requests.get(f'{base_url}/equity/portfolio', headers=headers, timeout=10)
+        positions = r.json()
+    except Exception as e:
+        print(f"   ❌ Failed to fetch positions: {e}")
+        return results
+    
+    if not isinstance(positions, list) or len(positions) == 0:
+        print("   ℹ️  No open positions — nothing to close")
+        return results
+    
+    total_locked = 0.0
+    total_kept = 0.0
+    
+    for pos in positions:
+        ticker_212 = pos.get('ticker', '')
+        ticker = ticker_212.replace('_US_EQ', '')
+        qty = pos.get('quantity', 0)
+        avg_price = pos.get('averagePrice', 0)
+        cur_price = pos.get('currentPrice', 0)
+        ppl = pos.get('ppl', 0)
+        fx_ppl = pos.get('fxPpl', 0)
+        total_ppl = ppl + fx_ppl
+        pct_change = ((cur_price - avg_price) / avg_price * 100) if avg_price > 0 else 0
+        
+        if qty <= 0:
+            continue
+        
+        # Decision logic
+        if total_ppl > 0:
+            # IN PROFIT — SELL to lock in gains
+            action = "SELL"
+            reason = f"EOD PROFIT LOCK: {pct_change:+.1f}% (${total_ppl:+.2f})"
+            icon = "💰"
+        elif pct_change > -1.0:
+            # Tiny loss (< 1%) — sell, not worth holding overnight
+            action = "SELL"
+            reason = f"EOD CLOSE: small loss {pct_change:+.1f}% (${total_ppl:+.2f})"
+            icon = "🔄"
+        else:
+            # Bigger loss — keep for recovery
+            action = "HOLD"
+            reason = f"EOD HOLD: {pct_change:+.1f}% loss — hold for recovery"
+            icon = "⏸️"
+        
+        print(f"   {icon} {ticker:6s} qty={qty} @ ${cur_price:.2f} | {pct_change:+.1f}% | ${total_ppl:+.2f} → {action}")
+        
+        if action == "SELL":
+            if not dry_run:
+                try:
+                    order_result = place_market_order(ticker_212, -qty, confirm=True)
+                    order_id = order_result.get('id', 'N/A') if isinstance(order_result, dict) else 'N/A'
+                    print(f"         ✅ SOLD — Order {order_id}")
+                    total_locked += total_ppl
+                    # Update risk manager
+                    try:
+                        risk_mgr.close_position(ticker, cur_price, reason)
+                    except Exception:
+                        pass
+                    log_trade(ticker_212, "sell", qty, cur_price, reason=reason,
+                             metadata={"exit_reason": "EOD_PROFIT_TAKE", "pnl": total_ppl})
+                    results[ticker_212] = {"action": "sell", "qty": qty, "pnl": total_ppl, "reason": reason}
+                except Exception as e:
+                    print(f"         ❌ Sell failed: {e}")
+                    results[ticker_212] = {"action": "sell_failed", "error": str(e)}
+            else:
+                print(f"         🧪 DRY RUN — would sell")
+                total_locked += total_ppl
+                results[ticker_212] = {"action": "sell_dryrun", "qty": qty, "pnl": total_ppl}
+        else:
+            total_kept += total_ppl
+            results[ticker_212] = {"action": "hold", "pnl": total_ppl, "reason": reason}
+    
+    print(f"\n   📊 EOD Summary: Locked ${total_locked:+.2f} profit | Holding ${total_kept:+.2f} in losses")
+    print("=" * 60)
+    
+    # Notify
+    notify_bot_status("EOD_CLOSE", f"Locked ${total_locked:+.2f} profit, holding ${total_kept:+.2f}")
+    
+    return results
+
+
+# ---------------------------------------------------------------------------
+#  INTRADAY PROFIT TAKING — Lock in gains during the trading day
+# ---------------------------------------------------------------------------
+def check_intraday_profits(risk_mgr: AdvancedRiskManager,
+                          quick_profit_pct: float = 5.0,
+                          big_profit_pct: float = 15.0) -> list:
+    """Check positions for intraday profit targets.
+    
+    - Quick profit (>=5%): Sell half to lock in gains, let rest ride
+    - Big profit (>=15%): Sell all — don't be greedy
+    """
+    exits = []
+    positions = risk_mgr.get_open_positions()
+    
+    for ticker, pos in positions.items():
+        try:
+            entry_price = pos.get("entry_price", 0)
+            current_price = pos.get("current_price", entry_price)
+            qty = pos.get("quantity", 0)
+            if entry_price <= 0 or qty <= 0:
+                continue
+            
+            pnl_pct = (current_price - entry_price) / entry_price * 100
+            
+            if pnl_pct >= big_profit_pct:
+                # BIG WIN — sell everything, don't be greedy
+                exits.append({
+                    "ticker": ticker,
+                    "action": "SELL",
+                    "reason": f"BIG PROFIT: {pnl_pct:+.1f}% — locking in full gain",
+                    "price": current_price,
+                })
+                print(f"   🔥 BIG PROFIT: {ticker} {pnl_pct:+.1f}% — sell all")
+            elif pnl_pct >= quick_profit_pct:
+                # Quick profit — sell half, let rest ride
+                exits.append({
+                    "ticker": ticker,
+                    "action": "SELL_PARTIAL",
+                    "portion": 0.5,
+                    "reason": f"QUICK PROFIT: {pnl_pct:+.1f}% — taking half off",
+                    "price": current_price,
+                })
+                print(f"   💰 QUICK PROFIT: {ticker} {pnl_pct:+.1f}% — sell half")
+        except Exception as e:
+            print(f"   ⚠️ Profit check error {ticker}: {e}")
+    
+    return exits
+
+
+# ---------------------------------------------------------------------------
 #  MAIN EXECUTION ENGINE
 # ---------------------------------------------------------------------------
 def execute_live_trading(tickers_212: list, dry_run: bool = False) -> dict:
@@ -365,6 +527,7 @@ def execute_live_trading(tickers_212: list, dry_run: bool = False) -> dict:
     notify_bot_status("RUNNING", f"SmartBot V3 at {datetime.now().strftime('%H:%M:%S')}")
 
     risk_mgr = AdvancedRiskManager()
+    brain = SmartBotBrain()  # Self-learning intelligence
 
     # --- PHASE 0: Update position prices ---
     print("\n📊 Updating position prices...")
@@ -378,11 +541,16 @@ def execute_live_trading(tickers_212: list, dry_run: bool = False) -> dict:
         except Exception as e:
             print(f"   ⚠️ Price update {ticker}: {e}")
 
-    # --- PHASE 1: Smart Capital Recycling ---
+    # --- PHASE 1: Smart Capital Recycling + Intraday Profit Taking ---
     print("\n♻️  Checking stale positions...")
     stale_exits = check_stale_positions(risk_mgr, max_hours=6.0, min_move_pct=0.3)
     exit_signals = risk_mgr.check_exit_signals()
-    all_exits = stale_exits + exit_signals
+
+    # --- INTRADAY PROFIT TAKING: Lock in gains at +5% ---
+    print("\n💰 Checking intraday profit targets...")
+    profit_exits = check_intraday_profits(risk_mgr)
+
+    all_exits = profit_exits + stale_exits + exit_signals
 
     for exit_sig in all_exits:
         ticker = exit_sig["ticker"]
@@ -401,6 +569,25 @@ def execute_live_trading(tickers_212: list, dry_run: bool = False) -> dict:
                 try:
                     order_result = place_market_order(ticker_212, -qty, confirm=True)
                     print(f"   ✅ Sold: {order_result.get('id', 'N/A')}")
+                    # Teach brain from this trade
+                    pos_data = positions.get(ticker, {})
+                    entry_price = pos_data.get("entry_price", price)
+                    entry_time = pos_data.get("entry_time", datetime.now().isoformat())
+                    try:
+                        hold_hours = (datetime.now() - datetime.fromisoformat(entry_time)).total_seconds() / 3600
+                    except:
+                        hold_hours = 6
+                    pnl = (price - entry_price) * qty
+                    pnl_pct = ((price - entry_price) / entry_price * 100) if entry_price > 0 else 0
+                    brain.learn_from_trade({
+                        "ticker": ticker, "pnl": pnl, "pnl_pct": pnl_pct,
+                        "entry_score": pos_data.get("score", 50),
+                        "entry_factors": pos_data.get("factors", []),
+                        "entry_rsi": pos_data.get("rsi", 50),
+                        "regime": pos_data.get("regime", "normal"),
+                        "hold_hours": hold_hours,
+                        "reason": reason,
+                    })
                     risk_mgr.close_position(ticker, price, reason)
                     log_trade(ticker_212, "sell", qty, price, reason=reason, metadata={"exit_reason": reason})
                     results[ticker_212] = {"action": "sell", "qty": qty, "reason": reason}
@@ -643,6 +830,23 @@ def execute_live_trading(tickers_212: list, dry_run: bool = False) -> dict:
 
         confidence = min(confidence, 1.0)
 
+        # === BRAIN INTELLIGENCE LAYER ===
+        # The brain learns from every trade and adjusts confidence
+        brain_intel = brain.get_combined_intelligence(
+            ticker_yf, signal.get("factors", []),
+            regime=regime_info.get("regime", "normal")
+        )
+        if brain_intel["ticker_trades"] > 0:
+            old_conf = confidence
+            confidence *= brain_intel["confidence_mult"]
+            confidence = min(confidence, 1.0)
+            brain_reasons = " | ".join(brain_intel["reasons"][:2])
+            if brain_intel["confidence_mult"] != 1.0:
+                print(f"   🧠 Brain: x{brain_intel['confidence_mult']:.2f} "
+                      f"({brain_reasons}) "
+                      f"WR:{brain_intel['ticker_winrate']:.0%} "
+                      f"avg:${brain_intel['ticker_avg_pnl']:+.3f}")
+
         # Dashboard ML status
         if ml_model and action in ("buy", "sell") and not ml_status["ml_signal"]:
             try:
@@ -740,6 +944,17 @@ def execute_live_trading(tickers_212: list, dry_run: bool = False) -> dict:
                     print(f"      ✅ Order: {oid}")
                     risk_mgr.add_position(ticker_yf, qty, price, atr, reason,
                                          stop_loss=stop_loss, profit_target=profit_target)
+                    # Store brain-relevant data in position for learning on exit
+                    try:
+                        pos_all = risk_mgr.load_positions()
+                        if ticker_yf in pos_all:
+                            pos_all[ticker_yf]["score"] = mscore
+                            pos_all[ticker_yf]["factors"] = signal.get("factors", [])[:6]
+                            pos_all[ticker_yf]["rsi"] = signal.get("rsi", 50)
+                            pos_all[ticker_yf]["regime"] = regime_info.get("regime", "normal")
+                            risk_mgr.save_positions(pos_all)
+                    except Exception:
+                        pass
                     log_trade(ticker_212, "buy", qty, price, confidence=confidence, reason=reason, metadata={
                         "score": mscore, "ai_boosts": ai_boosts, "regime": regime_info,
                         "kelly_f": kelly_f, "factors": signal.get("factors", []),

@@ -1,0 +1,351 @@
+{
+  "version": 2,
+  "created": "2026-02-14T10:48:10.345125",
+  "last_updated": "2026-02-14T10:48:10.373061",
+  "total_trades_learned": 8,
+  "ticker_memory": {
+    "NOK": {
+      "wins": 0,
+      "losses": 2,
+      "total_pnl": -0.059999942779541016,
+      "avg_pnl": -0.029999971389770508,
+      "best_trade": 0,
+      "worst_trade": -0.059999942779541016,
+      "total_trades": 2,
+      "win_streak": 0,
+      "lose_streak": 2,
+      "last_trade": "2026-02-13T20:45:20.715394",
+      "avg_hold_hours": 101.55652488722222
+    },
+    "SNAP": {
+      "wins": 1,
+      "losses": 2,
+      "total_pnl": -0.11309957504272461,
+      "avg_pnl": -0.03769985834757487,
+      "best_trade": 0.0019001960754394531,
+      "worst_trade": -0.07499980926513672,
+      "total_trades": 3,
+      "win_streak": 0,
+      "lose_streak": 1,
+      "last_trade": "2026-02-10T02:05:58.146488",
+      "avg_hold_hours": 27.554654839907403
+    },
+    "AAL": {
+      "wins": 0,
+      "losses": 1,
+      "total_pnl": -0.06989963531494148,
+      "avg_pnl": -0.06989963531494148,
+      "best_trade": 0,
+      "worst_trade": -0.06989963531494148,
+      "total_trades": 1,
+      "win_streak": 0,
+      "lose_streak": 1,
+      "last_trade": "2026-02-13T20:45:21.037122",
+      "avg_hold_hours": 2.1710060572222223
+    },
+    "RIVN": {
+      "wins": 1,
+      "losses": 0,
+      "total_pnl": 4.361500148773195,
+      "avg_pnl": 4.361500148773195,
+      "best_trade": 4.361500148773195,
+      "worst_trade": 0,
+      "total_trades": 1,
+      "win_streak": 1,
+      "lose_streak": 0,
+      "last_trade": "2026-02-13T20:45:21.362042",
+      "avg_hold_hours": 49.519187244722225
+    },
+    "AMC": {
+      "wins": 0,
+      "losses": 1,
+      "total_pnl": -0.2999997138977051,
+      "avg_pnl": -0.2999997138977051,
+      "best_trade": 0,
+      "worst_trade": -0.2999997138977051,
+      "total_trades": 1,
+      "win_streak": 0,
+      "lose_streak": 1,
+      "last_trade": "2026-02-13T20:56:53.409572",
+      "avg_hold_hours": 49.66463499694444
+    }
+  },
+  "factor_memory": {
+    "SMA+": {
+      "wins": 1,
+      "losses": 3,
+      "total_pnl": -0.1829992103576661,
+      "avg_pnl": -0.04574980258941652
+    },
+    "RSI:buy_zone": {
+      "wins": 2,
+      "losses": 4,
+      "total_pnl": 3.878501224517824,
+      "avg_pnl": 0.6464168707529706
+    },
+    "MACD+": {
+      "wins": 2,
+      "losses": 4,
+      "total_pnl": 3.878501224517824,
+      "avg_pnl": 0.6464168707529706
+    },
+    "BB:mid": {
+      "wins": 2,
+      "losses": 4,
+      "total_pnl": 3.878501224517824,
+      "avg_pnl": 0.6464168707529706
+    },
+    "Vol+": {
+      "wins": 1,
+      "losses": 2,
+      "total_pnl": -0.11309957504272461,
+      "avg_pnl": -0.03769985834757487
+    },
+    "VWAP:buy": {
+      "wins": 2,
+      "losses": 4,
+      "total_pnl": 3.878501224517824,
+      "avg_pnl": 0.6464168707529706
+    },
+    "MACD++": {
+      "wins": 1,
+      "losses": 2,
+      "total_pnl": 3.9916007995605485,
+      "avg_pnl": 1.3305335998535162
+    },
+    "momentum:up": {
+      "wins": 0,
+      "losses": 2,
+      "total_pnl": -0.36989934921264656,
+      "avg_pnl": -0.18494967460632328
+    },
+    "momentum:strong_up": {
+      "wins": 1,
+      "losses": 0,
+      "total_pnl": 4.361500148773195,
+      "avg_pnl": 4.361500148773195
+    }
+  },
+  "condition_memory": {
+    "regime_wins": {
+      "trend": 0,
+      "range": 0,
+      "volatile": 0,
+      "normal": 2
+    },
+    "regime_losses": {
+      "trend": 2,
+      "range": 0,
+      "volatile": 0,
+      "normal": 4
+    },
+    "hour_wins": {
+      "19": 1,
+      "20": 1
+    },
+    "hour_losses": {
+      "16": 1,
+      "14": 1,
+      "2": 1,
+      "20": 3
+    },
+    "day_wins": {
+      "Monday": 1,
+      "Friday": 1
+    },
+    "day_losses": {
+      "Sunday": 1,
+      "Monday": 1,
+      "Tuesday": 1,
+      "Friday": 3
+    }
+  },
+  "score_memory": {
+    "winning_scores": [
+      63,
+      60
+    ],
+    "losing_scores": [
+      50,
+      63,
+      63,
+      50,
+      66,
+      60
+    ]
+  },
+  "adaptive_params": {
+    "optimal_score_min": 50,
+    "optimal_rsi_buy_low": 30,
+    "optimal_rsi_buy_high": 60,
+    "confidence_boost_tickers": {},
+    "confidence_penalty_tickers": {
+      "NOK": 0.955,
+      "SNAP": 0.985
+    },
+    "best_factors": [
+      "RSI:buy_zone",
+      "MACD+",
+      "BB:mid",
+      "Vol+",
+      "VWAP:buy"
+    ],
+    "worst_factors": [
+      "Vol+",
+      "VWAP:buy",
+      "MACD++",
+      "SMA+",
+      "momentum:up"
+    ],
+    "preferred_regime": "normal",
+    "learning_rate": 0.09
+  },
+  "trade_log": [
+    {
+      "timestamp": "2026-02-08T16:19:48.671881",
+      "ticker": "NOK",
+      "pnl": 0.0,
+      "pnl_pct": 0.0,
+      "win": false,
+      "score": 50,
+      "factors": [],
+      "rsi": 50,
+      "regime": "trend",
+      "hold_hours": 39.4,
+      "reason": "RECYCLE: 39h held, +0.00% \u2014 freeing capital"
+    },
+    {
+      "timestamp": "2026-02-09T14:30:48.259917",
+      "ticker": "SNAP",
+      "pnl": -0.075,
+      "pnl_pct": -1.44,
+      "win": false,
+      "score": 63,
+      "factors": [
+        "SMA+",
+        "RSI:39*",
+        "MACD+",
+        "BB:mid",
+        "Vol+",
+        "VWAP:buy"
+      ],
+      "rsi": 50,
+      "regime": "normal",
+      "hold_hours": 22.0,
+      "reason": "RECYCLE: 22h held, -1.44% \u2014 freeing capital"
+    },
+    {
+      "timestamp": "2026-02-09T19:32:09.099502",
+      "ticker": "SNAP",
+      "pnl": 0.0019,
+      "pnl_pct": 0.04,
+      "win": true,
+      "score": 63,
+      "factors": [
+        "SMA+",
+        "RSI:39*",
+        "MACD+",
+        "BB:mid",
+        "Vol+",
+        "VWAP:buy"
+      ],
+      "rsi": 50,
+      "regime": "normal",
+      "hold_hours": 27.0,
+      "reason": "STOP_LOSS"
+    },
+    {
+      "timestamp": "2026-02-10T02:05:58.146488",
+      "ticker": "SNAP",
+      "pnl": -0.04,
+      "pnl_pct": -0.77,
+      "win": false,
+      "score": 63,
+      "factors": [
+        "SMA+",
+        "RSI:39*",
+        "MACD+",
+        "BB:mid",
+        "Vol+",
+        "VWAP:buy"
+      ],
+      "rsi": 50,
+      "regime": "normal",
+      "hold_hours": 33.6,
+      "reason": "RECYCLE: 6h held, +0.00% \u2014 freeing capital"
+    },
+    {
+      "timestamp": "2026-02-13T20:45:20.715394",
+      "ticker": "NOK",
+      "pnl": -0.06,
+      "pnl_pct": -0.85,
+      "win": false,
+      "score": 50,
+      "factors": [],
+      "rsi": 50,
+      "regime": "trend",
+      "hold_hours": 163.8,
+      "reason": "EOD CLOSE: small loss -0.7% ($-0.06)"
+    },
+    {
+      "timestamp": "2026-02-13T20:45:21.037122",
+      "ticker": "AAL",
+      "pnl": -0.0699,
+      "pnl_pct": -0.5,
+      "win": false,
+      "score": 66,
+      "factors": [
+        "SMA+",
+        "RSI:48*",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "+0.4%"
+      ],
+      "rsi": 50,
+      "regime": "normal",
+      "hold_hours": 2.2,
+      "reason": "EOD CLOSE: small loss -0.5% ($-0.05)"
+    },
+    {
+      "timestamp": "2026-02-13T20:45:21.362042",
+      "ticker": "RIVN",
+      "pnl": 4.3615,
+      "pnl_pct": 23.15,
+      "win": true,
+      "score": 60,
+      "factors": [
+        "RSI:31*",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "+0.6%",
+        "VWAP:buy"
+      ],
+      "rsi": 50,
+      "regime": "normal",
+      "hold_hours": 49.5,
+      "reason": "EOD PROFIT LOCK: +23.1% ($+3.17)"
+    },
+    {
+      "timestamp": "2026-02-13T20:56:53.409572",
+      "ticker": "AMC",
+      "pnl": -0.3,
+      "pnl_pct": -4.63,
+      "win": false,
+      "score": 60,
+      "factors": [
+        "RSI:48*",
+        "MACD+",
+        "MACD++",
+        "BB:mid",
+        "+0.5%",
+        "VWAP:buy"
+      ],
+      "rsi": 50,
+      "regime": "normal",
+      "hold_hours": 49.7,
+      "reason": "STOP_LOSS"
+    }
+  ]
+}
